@@ -1,18 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>네이버 요약뉴스</title>
-</head>
-<body>
-    <!-- 상단영역:제목 메뉴 #은 아이디요소-->
-    <div id="top" class="bx"></div>
-    <!-- 메인영역:컨텐츠 -->
-    <div id="cont" class="bx"></div>
-    <!-- 하단영역:회사정보 -->
-    <div id="info" class="bx"></div>
-    <!-- 
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>네이버 요약뉴스</title>
+
+        <!-- css인터널방식 코딩영역 -->
+        <style>
+            /* css영역내 주석문 */
+            /* 모든 공통 디자인 요소: 박스모델
+            1.크기: 가로 width 세로 height
+            2.경계선 : border
+            3.내부여백 : padding
+            4.외부여백 : margin
+            여백 공통방향 top bottom left right */
+
+            /* css속성세팅형식
+            선택자{속성:값;}
+            
+            1.타입선택자 : 태그명 (div,p,a 등)
+            2.아이디선택자 : #아이디명
+            3.클래스선택자 : .클래스명 
+            4.자식선택자 : 스페이스 (div a)
+            5.직계자식선택자 : 오른쪽꺽쇠 (div > a )
+            6.종속선택자 : 요소명#아이디명 / 요소명.클래스명
+            (div.mm) -> div인데 클래스가 mm    */
+          
+    
+
+            /* 레이아웃 박스 공통 디자인 */
+            
+            .bx{ 
+                /* 크기 */
+                width: 852px;
+                /* 외곽선 */
+                border: 4px solid #812626;
+                /* 패딩 */
+                padding: 50px;
+                /* 마진 */
+                margin: auto;}
+
+                /* 메인이미지 */
+                .cimg{width:100%
+                    /* 100p */
+                
+                
+                
+                }
+
+
+
+            
+
+            /* 1.상단영역 */
+            #top{background-color:yellow;}
+        </style>
+    </head>
+    <body>
+        <!-- 상단영역:제목 메뉴 #은 아이디요소-->
+        <header id="top" class="bx">
+            <!-- 1-1 제목 -->
+            <h1>네이버 요약 뉴스</h1>
+            <!-- GNB 글로벌 네비게이션 바 메뉴 -->
+            <nav id="gnb">
+                <a href="index.html">
+                    <img src="image/logo.png" alt="네이버 로고" style="width: 50px;">
+                    
+                    <!-- 스타일 속성으로 css셋팅하는방법은 인라인방식 -->
+                </a>
+                <a href="sub1.html">경제</a>
+                <a href="sub2.html">정치</a>
+                <a href="sub3.html">사회</a>
+                <a href="sub4.html">IT/과학</a>
+                <a href="sub5.html">TV/연예</a>
+            </nav>
+        </header>
+        <!-- 메인영역:컨텐츠 -->
+        
+        <main id="cont" class="bx"><img src="./image/new.jpg" alt="뉴스 이미지" width="880px"></main>
+        <!-- 하단영역:회사정보 -->
+        <footer id="info" class="bx">
+            <address>
+                서울시 강서구 허준로 176
+            <br>대표 : 문승준
+            <br>전화 : 010 2222 3333
+            </address>
+        </footer>
+        <!-- 
         레이아웃을 위한 블록요소
         div : 영역을 나누고 묶어주는 요소
 
@@ -35,6 +109,16 @@
         참고) 요소와 태그는 무엇이 다른가...
         요소는 공통적인 성질 element
         태그는 구체적인 요소 tag
+
+
+        웹에서의 경로
+        1. 상대경로 : 현재위치에서 파악되는경로 ./ 또는 쓰지안고 바로 ../ 상위경로
+        2. 절대경로 : http부터 쓰는 웹경로
+        3. 절대상대경로 : 웹사이트 루트부터의 경로 /부터 씀
+
+        주의 : 절대상대경로는 서버루트폴더가 같지않으면 경로가 망가짐
+        또는 로컬에서 직접 웹페이지를 열어도 망가짐
+  
      -->
-</body>
+    </body>
 </html>
