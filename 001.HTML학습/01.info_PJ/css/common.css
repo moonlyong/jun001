@@ -20,8 +20,6 @@ padding: 0;}
     padding: 20px;
     /* 마진 */
     margin: 0 auto;
-
-    text-align: center;
     /* 모서리깎기 */
     border-radius: 50px ;
 }
@@ -30,6 +28,9 @@ padding: 0;}
     2개 위아래 양쪽
     3개 위 좌우 아래
     4개 위 오른 아래 왼*/
+
+    /* 상단하단만 중앙정렬 */
+    #top,#info{text-align: center;}
 
 /* 메인이미지 */
 .cimg {
@@ -94,7 +95,7 @@ width: 70%}
 #cont {
     margin: 10px auto;
 
-    background-color: rgba(230, 222, 255, 0.357);
+    background-color: #e6deff;
 }
 /* 3.하단영역 */
 #info {

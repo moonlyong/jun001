@@ -3,3 +3,10 @@
 
 /* 공통외부 css 합치기 */
 @import url(./common.css);
+h2.stit{
+color: black;
+font-size: 36px;
+font-family: "Gugi", cursive;
+text-align: center;
+text-shadow: 3px 3px 3px #34d5db66;
+}
