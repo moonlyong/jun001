@@ -8,10 +8,24 @@
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&family=Gugi&family=Nanum+Pen+Script&display=swap");
 
+            .container {
+                position: relative;
+                display: inline-block;
+            }
 
+            .imageA {
+              
+                top: 0;
+                left: 0;
+                z-index: 1; /* 이미지 A를 위로 띄웁니다. */
+            }
 
-            
-
+            .imageB {
+                
+                top: 0;
+                left: 0;
+                z-index: 2; /* 이미지 B를 위로 띄웁니다. */
+            }
 
             .bx {
                 width: 800px;
@@ -21,13 +35,12 @@
                 text-align: center;
             }
 
-            .cimg {
+            .container {
                 width: 100;
             }
 
             #top {
                 background-color: rgba(124, 212, 109, 0.483);
-              
             }
 
             #top h1 {
@@ -36,8 +49,8 @@
                 text-shadow: 2px 2px 2px #999999;
                 font-weight: 50;
 
-                margin: 0;}
-
+                margin: 0;
+            }
 
             #gnb a {
                 text-decoration-line: none;
@@ -47,7 +60,6 @@
                 margin-right: 5px;
                 margin-left: 5px;
             }
-
 
             #gnb a.haha {
                 color: rgb(142, 26, 26);
@@ -61,7 +73,6 @@
                 padding: 2px;
                 vertical-align: -8px;
             }
-
 
             #cont {
                 margin: 10px auto;
@@ -85,7 +96,6 @@
             <nav id="gnb">
                 <a href="index.html">
                     <img src="image/logo.png" alt="네이버 로고" />
-
                 </a>
                 <a href="sub1.html">경제</a> | <a href="sub2.html">정치</a> |
                 <a href="sub3.html">사회</a> | <a href="sub4.html">IT/과학</a> |
@@ -94,14 +104,19 @@
         </header>
 
         <main id="cont" class="bx">
-            <img class="cimg" src="./image/new.jpg" alt="뉴스 이미지" width="800px" />
+
+            <div class="container">
+                <img class="imageA" src="./image/back.png" alt="이미지 A" width="800PX">
+                <img class="imageB" src="./image/pngegg.png" alt="이미지 B" width="800PX">
+            </div>
+        
         </main>
+
         <footer id="info" class="bx">
             <address>
                 서울시 강남구 역삼동 119 대호빌딩 8F
                 <br />대표 : 문 승 준 <br />전화 : 010 2222 3333
             </address>
         </footer>
-            
     </body>
 </html>
