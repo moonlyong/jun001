@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&family=Gugi&family=Nanum+Pen+Script&display=swap");
+
+/* 요소의 초기화 */
+
+html,body,h1,h2{margin: 0;
+padding: 0;}
+
+/* 레이아웃 박스 공통 디자인 */
+
+
+
+.bx {
+    /* 크기 */
+    width: 680px;
+    /* 외곽선 */
+    border: 4px dotted #6e5b13;
+    /* 패딩 */
+    padding: 20px;
+    /* 마진 */
+    margin: 0 auto;
+
+    text-align: center;
+    /* 모서리깎기 */
+    border-radius: 50px ;
+}
+/* 마진
+    1개 4방향
+    2개 위아래 양쪽
+    3개 위 좌우 아래
+    4개 위 오른 아래 왼*/
+
+/* 메인이미지 */
+.cimg {
+width: 70%}
+
+
+
+/* 100p */
+/* 택스트 중앙:tac */
+
+/* 1.상단영역 */
+#top {
+    background-color:rgb(244 238 203);
+}
+
+/* 타이틀  */
+#top h1 {
+    font-size: 88px;
+    font-family: "Nanum Pen Script", cursive;
+    text-shadow: 2px 2px 2px #999999;
+    font-weight: 50;
+
+    margin: 0;
+    /* 택스트 쉐도워 
+값 x축 y축 블러 색 ts
+콤마로 다중 그림자 사용가능
+*/
+}
+
+/* 메뉴링크 */
+
+#gnb a {
+    text-decoration-line: none;
+    color: black;
+    font-size: 25px;
+    font-family: "Gugi", cursive;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* 가상클래스 : hover 마우스 오버시 */
+/* a+as는 앞에요소가 있는 형제 a요소를 선택
+결과적으로 첫번째 요소가 선택지않는다 */
+
+#gnb a.haha {
+    color: rgb(142, 26, 26);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
+
+/* 로고이미지 */
+#gnb img {
+    border: 1px double #3dac6b;
+    width: 28px;
+    padding: 2px;
+    vertical-align: -8px;
+}
+
+/* 버티컬 얼라인 :인라인요소간 세로정렬 */
+
+/* 2.메인영역 */
+#cont {
+    margin: 10px auto;
+
+    background-color: rgba(230, 222, 255, 0.357);
+}
+/* 3.하단영역 */
+#info {
+    background-color: rgba(244, 238, 203, 0.56);
+}
+#info address {
+    font-family: "Gothic A1", sans-serif;
+    font-style: normal;
+    font-size: 18px;
+}
+
+/* 대표자 span */
+
+span.utxt {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: rgb(255, 0, 0);
+}
+b.utxt {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: blue;
+}
