@@ -3,10 +3,76 @@
 
 /* 공통외부 css 합치기 */
 @import url(./common.css);
-h2.stit{
-color: black;
-font-size: 36px;
-font-family: "Gugi", cursive;
-text-align: center;
-text-shadow: 3px 3px 3px #34d5db66;
+/* 서브페이지 공통 글자 설정 */
+
+h2.stit {
+    color: black;
+    font-size: 36px;
+    font-family: "Gugi", cursive;
+    text-align: center;
+    text-shadow: 3px 3px 3px #34d5db66;
+    padding: 40px;
+    border-radius: 20px;
+    outline: 2px solid black;
+    box-shadow: 0px 0px 10px;
+    margin-bottom: 10px;
 }
+
+/* 아웃라인 박스크기에 영향을 안줌
+ */
+
+/* IT과학 배경 */
+.st4 {
+    /* bg 색 이미지 반복 위치 크기 */
+    /* 배경넣기 */
+    background: url(../image/gom.jpg) no-repeat center/cover;
+}
+
+.prlogo img {
+    height: 50px;
+}
+
+/* 기사타이틀  */
+.atit {
+    font-size: 30px;
+}
+/* 기사이미지 */
+.afig img {
+    width: 100%;
+}
+.afig {
+    margin-bottom: 20px;
+    font-size: small;
+    text-align: center;
+}
+
+/* 자간 ls
+단어간격 ws
+양쪽정렬 justify */
+.mvbx{height: 450px;}
+
+/* div와 같은 block요소는 wid설정을 하지않으면 오토로됨 */
+.mvbx iframe{border: none;
+width: 100%;
+height: 100%;
+}
+
+
+p{line-height: 1.8;}/* 라인hi 글자 상하간격 px 배율표시 */
+
+.alink{text-align: right;}
+
+
+.alink a{border: 2px solid black;
+    font-family: 'Gugi', cursive; ;
+    line-height: 100px;
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+border-radius: 50%;}
+
+
+.alink a:hover{color: rgb(255, 0, 0);
+background-color: rgb(209, 255, 3);
+box}
