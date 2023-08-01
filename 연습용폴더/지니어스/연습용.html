@@ -4,130 +4,50 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ML지니어스</title>
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Gothic+A1:wght@700&family=Gugi&family=Nanum+Pen+Script&display=swap");
-
-            @font-face {
-                font-family: "CustomFont"; /* 글꼴 이름 (임의로 설정 가능) */
-                src: url(../MaplestoryFont_TTF/Maplestory\ Bold.ttf)
-                    format("truetype"); /* 글꼴 파일 경로 및 형식 */
-            }
-            .bx {
-                max-width: 1200px;
-                border: 4px;
-                padding: 20px;
-                margin: 0 auto;
-            }
-            #ML a {
-                text-decoration-line: none;
-                text-shadow: 0px 0px 8px #fcf700;
-                margin: 0 40px;
-                font-family: "Black Han Sans", sans-serif;
-
-                color: rgb(4, 5, 0);
-                font-size: 20px;
-            }
-
-
-
-
-            /* 멤버 */
-            .mb {
-                width: 400px;
-                height: 400px;
-                margin-left: 15%;
-                margin-top: 20px;
-               
-            }
-            
-            
-            .mb img {width: 90%;}
-            
-            .gm img {width: 90%;}
-
-
-
-            /* 게임 */
-            .gm {
-                width: 400px;
-                height: 400px;
-                margin-top: -423px;
-                margin-left: 53%;
-               
-            }
         
+        <link rel="stylesheet" href="./메인css/MLcommon.css">
 
-
-            
-            #body1 {
-                text-align: center;
-                max-width: 100%;
-                background-color: #000000;
-            }
-
-            #top {
-                background: url(../mainback.jpg) no-repeat center/cover;
-            }
-            .maintit {
-                font-family: customfont;
-
-                color: #000000;
-                text-decoration-line: none;
-                text-indent: 50px;
-                text-shadow: 0px 0px 5px rgb(255, 255, 255);
-
-                font-size: 50px;
-                border: 5px ridge;
-                padding: 40px;
-                background-image: url(../mlmlogoc.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position-y: center;
-            }
-
-            #cont {
-                max-width: 1200px;
-               
-                font-family: "Black Han Sans", sans-serif;
-
-                color: rgb(4, 5, 0);
-                font-size: 20px;
-                text-decoration-line: none;
-                text-shadow: 0px 0px 8px #fcf700;
-            }
-        </style>
+    
     </head>
-    <body id="body1">
+    <body id="body1" class="bx">
         <header id="top" class="bx">
             <img
                 src="../MLMIMG.webp"
-                width="500px
-        "
+        
+    
             />
 
             <h1 class="maintit">ML 지니어스 보드게임 카페</h1>
 
-            <nav id="ML">
+            <nav id="menu">
                 <a href="연습용.html">메인페이지</a>
                 <a href="mlm.html">멤버소개</a>
-                <a href="mlm.html1">게임소개</a>
-                <a href="mlm.html2">커뮤니티</a>
-                <a href="mlm.html3">예약문의</a>
-                <a href="mlm.html4">고객센터</a>
+                <a href="mlm1.html">게임소개</a>
+                <a href="mlm2.html">커뮤니티</a>
+                <a href="mlm3.html">예약문의</a>
+                <a href="mlm4.html">고객센터</a>
             </nav>
         </header>
 
         <hr />
-        <main id="cont" class="bx">
-            <div id="ML" class="mb"><h3>멤버소개</h3> <br>
+        <div id="cont" class="bx">
+            <div id="mb" class="ML"><h3>멤버소개</h3> <br>
                 <a href="mlm.html"><img src="../singu.jpg" alt=""></a>
             </div>
-            <div id="ML" class="gm"><h3>게임소개</h3> <br>
-                <a href="mlm1.html"><img src="../singu.jpg" alt=""></a>
+            <div id="gm" class="ML"><h3>게임소개</h3> <br>
+                <a href="mlm1.html"><img src="../boradgm.jpg" alt=""></a>
             
             </div>
-        </main>
-
-        <footer id="ad" class="bx"></footer>
+            <div id="cum" class="ML"><h3>커뮤니티</h3><br><a href="mlm2.html"><img src="../cum.jpg" alt=""></a>
+            </div>
+        
+            <div id="ad" class="bx">
+                <h5>
+                서울시 강남구 역삼동 119 대호빌딩 8F
+                <br />대표 : <span class="utxt">문 승 준</span> <br />전화 :
+                <b class="utxt"> 010 2222 3333</b>
+                        </h5>
+            </div></div>
+    </footer>
     </body>
 </html>
