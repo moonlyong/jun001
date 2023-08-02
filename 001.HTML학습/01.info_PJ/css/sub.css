@@ -70,7 +70,9 @@ p{line-height: 1.8;}/* 라인hi 글자 상하간격 px 배율표시 */
     display: inline-block;
     width: 100px;
     height: 100px;
-border-radius: 50%;}
+border-radius: 50%;
+text-decoration: none;
+}
 
 
 .alink a:hover{color: rgb(255, 0, 0);
