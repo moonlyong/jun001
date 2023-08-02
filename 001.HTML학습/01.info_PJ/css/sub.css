@@ -51,12 +51,49 @@ h2.stit {
 양쪽정렬 justify */
 .mvbx{height: 450px;}
 
+/* 인용블록영역 */
+.bqbx{
+    padding: 20px;
+    margin: 20px 0;
+    border-top: 2px dashed #ccc;
+    border-bottom: 2px dashed #ccc;
+    font-size: 18px;
+
+}
+/* 인용블록 이미지 */
+.bqbx img{float: right;
+width: 30%;
+border-radius: 20px;
+margin-left: 20px;}
+
+.bqbx blockquote{padding: 15px 0;
+line-height: 2;}
+
+/* article 제목공통 */
+.atbx h5{
+
+    background-color: aquamarine;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px black;
+    margin: 0;
+
+
+}
+
 /* div와 같은 block요소는 wid설정을 하지않으면 오토로됨 */
 .mvbx iframe{border: none;
 width: 100%;
 height: 100%;
 }
 
+/* 주해영역 */
+.desc{border-top: 2px dashed #ccc;
+    padding: 20px;
+    border-bottom: 2px dashed #ccc;}
+    
+    .desc div{padding: 10px 0;}
 
 
 
@@ -82,13 +119,13 @@ background-color: rgb(231, 233, 136);
     font-size: 18px;
     color: #303038;
     /* 자간 : ls */
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     /* 단어간격 : ws */
     word-spacing: 1px;
     /* 양쪽정렬 */
     text-align: justify;
     /* 줄간격 lh */
-    line-height: 2.1;
+    line-height: 1.62;
     /* 글자 라인간 간격을 조정함
     숫자만 쓰면 배수임(글자높이값에 대한배수)
     단위를 쓰면 단위에 맞게 줄간격 조정됨

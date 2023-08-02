@@ -8,7 +8,7 @@ font-family: 'Gugi', cursive;
 font-family: 'Nanum Pen Script', cursive; */
 /* 요소의 초기화 */
 
-html,body,h1,h2,figure{margin: 0;
+html,body,h1,h2,figure,blockquote{margin: 0;
 padding: 0;}
 
 /* 레이아웃 박스 공통 디자인 */
