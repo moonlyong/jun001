@@ -6,6 +6,9 @@
   font-family: "CustomFont"; /* 글꼴 이름 (임의로 설정 가능) */
   src: url(../MaplestoryFont_TTF/Maplestory\ Bold.ttf) format("truetype"); /* 글꼴 파일 경로 및 형식 */
 }
+
+html,body,h1,h2{margin: 0;
+padding: 0;}
 .bx {
   width: 1200px;
   border: 4px;
