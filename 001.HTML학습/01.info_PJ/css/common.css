@@ -126,3 +126,7 @@ b.utxt {
     text-decoration-color: blue;
 }
 body{background-image: url(../image/backimg.jpg);}
+
+/* 경제정치사회문화 */
+#gnb a:hover{color: rgb(255, 0, 0);
+    text-shadow: 0px 0px 7px black;}

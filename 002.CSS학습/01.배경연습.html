@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01.배경연습</title>
+
+    <style>
+      /* 초기화 */
+      html,
+      body,
+      h1,
+      h2 {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* 타이틀 */
+      h1 {
+        padding: 50px;
+        text-align: center;
+      }
+      html,
+      body {
+        height: 100%;
+        /* 보이는 화면만큼 높이값을 줄때 100% wndow>html>html
+        그래서 보이는 화면만큼 확장된다 */
+      }
+
+      /* 바디안에 배경넣기 */
+
+      body {
+        /* html에 배경을 넣지말자 전체배경은 body */
+        /* 1.배경색 bgc */
+
+        background-color: #f7c0c0;
+        /* 2.배경이미지 bgi url(경로) 기본적으로 반복됨 (repeat) */
+        background-image: url(./imgs/bg_logo_a_01.png);
+        background-repeat: no-repeat;
+        /* 화면고정 bga 배경고정값은 fixed 스크롤시 보이는 화면기준으로 배경고정 */
+        background-attachment: fixed;
+        /* 배경위치 bgp 가로 세로 순 
+        가로방향:left center right
+        세로방향:top center bottom
+        수치값 px % em
+        방향별 개별속성은?
+        x y축*/
+        background-position: right bottom;
+        /* 배경이미지 크기 bgz 가로 세로순
+        contain 원래 이미지 비율대로 모두보임(빈공간생김)
+        cover 비율 그대로 꽉채움 (남는부분 버려짐)
+        fill 비율무시하고 꽉채움 
+        수치값 가로세로중 하나만주면 비율유지 */
+        background-size: 200px;
+        /* 배경 한번에 쓰기
+        bg 색 반복 고정 위치 크기
+        개별셋팅 아래에 놓으면 개별세팅이 사라짐
+        배경 한번에 아래에 개별세팅을 놓으면 적용됨 */
+
+        
+      }
+
+
+      /* 바디 아래 wrap박스 */
+      .wrap{height: 100%;
+    /* 높이값이 바디를 채움 */
+    /* 배경 한번에 쓰기를 통해 다중배경 가능 */
+    /* 위치나 크기 특정값을 안쓰면 기본값 적용
+    가로는 lt 세로는 ct */
+    background: 
+    url(./imgs/d01.png) no-repeat center 500px/120px, 
+    url(./imgs/dc1.png) no-repeat center/400px, 
+    url(./imgs/d02.png) no-repeat right 5px top 5px /auto 36px,
+    url(./imgs/dc2.png) no-repeat right top/auto 150px,
+    url(./imgs/d03.png) no-repeat left 210px bottom 10px/80px,
+    url(./imgs/dc3.png) no-repeat left bottom/300px,
+    url(./imgs/d04.png) no-repeat right 10px top 380px/80px,
+    url(./imgs/dc4.png) no-repeat right/300px,
+    url(./imgs/d04.png) no-repeat right/300px,
+    url(./imgs/bg_mainvisual.jpg) no-repeat 0/300px,
+    url(./imgs/eachBG.jpg) no-repeat 50%top/40% 100%;
+    
+
+    
+    }
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <h1>01.배경넣기 연습</h1>
+    </div>
+  </body>
+</html>
