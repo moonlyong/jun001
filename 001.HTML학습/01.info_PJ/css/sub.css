@@ -58,7 +58,7 @@ height: 100%;
 }
 
 
-p{line-height: 1.8;}/* 라인hi 글자 상하간격 px 배율표시 */
+
 
 .alink{text-align: right;}
 
@@ -77,4 +77,47 @@ text-decoration: none;
 
 .alink a:hover{color: rgb(255, 0, 0);
 background-color: rgb(231, 233, 136);
+}
+.acont p {
+    font-size: 18px;
+    color: #303038;
+    /* 자간 : ls */
+    letter-spacing: 2px;
+    /* 단어간격 : ws */
+    word-spacing: 1px;
+    /* 양쪽정렬 */
+    text-align: justify;
+    /* 줄간격 lh */
+    line-height: 2.1;
+    /* 글자 라인간 간격을 조정함
+    숫자만 쓰면 배수임(글자높이값에 대한배수)
+    단위를 쓰면 단위에 맞게 줄간격 조정됨
+    -> 줄간격의 응용은 버튼 등의 글자를
+    세로 중앙에 오게 할때 박스높이값만큼 준다! */
+}
+
+.acont p em { 
+    /* 이탤릭 해제 */
+font-style: normal; 
+/* 글자색 변경 */
+color: rgb(187, 255, 0);
+/* 글자 두껍게 */
+font-weight: bold;
+/* 그림자 */
+text-shadow: 0px 0px 5px red;
+
+}
+
+
+.acont p mark{
+    display: block;
+    background-color: #ebebeb;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px 50px;
+    font-size: 50px;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    font-family: "Nanum Pen Script", cursive;
+    width: 65%;
 }
