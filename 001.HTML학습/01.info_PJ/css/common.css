@@ -8,26 +8,39 @@ font-family: 'Gugi', cursive;
 font-family: 'Nanum Pen Script', cursive; */
 /* 요소의 초기화 */
 
-html,body,h1,h2,figure,blockquote{margin: 0;
-padding: 0;}
+html,
+body,
+h1,
+h2,
+figure,
+blockquote,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* 리스트 블릿 숫자 없애기 */
+
+ul,ol{list-style: none;}
 
 /* 레이아웃 박스 공통 디자인 */
 
-
-
 .bx {
-    /* 크기 */
-    /* width: 800px; */
-    max-width: 800px;
-    /* 최대치 */
-    /* 외곽선 */
-    border: 4px solid #6e5b13;
-    /* 패딩 */
-    padding: 20px;
-    /* 마진 */
-    margin: 0 auto;
-    /* 모서리깎기 */
-    border-radius: 30px ;
+  /* 크기 */
+  /* width: 800px; */
+  max-width: 800px;
+  /* 최대치 */
+  /* 외곽선 */
+  border: 4px solid #6e5b13;
+  /* 패딩 */
+  padding: 20px;
+  /* 마진 */
+  margin: 0 auto;
+  /* 모서리깎기 */
+  border-radius: 30px;
 }
 /* 마진
     1개 4방향
@@ -35,32 +48,34 @@ padding: 0;}
     3개 위 좌우 아래
     4개 위 오른 아래 왼*/
 
-    /* 상단하단만 중앙정렬 */
-    #top,#info{text-align: center;}
+/* 상단하단만 중앙정렬 */
+#top,
+#info {
+  text-align: center;
+}
 
 /* 메인이미지 */
 .cimg {
-width: 800%}
-
-
+  width: 800%;
+}
 
 /* 100p */
 /* 택스트 중앙:tac */
 
 /* 1.상단영역 */
 #top {
-    background-color:rgba(244, 238, 203, 0.692);
+  background-color: rgba(244, 238, 203, 0.692);
 }
 
 /* 타이틀  */
 #top h1 {
-    font-size: 88px;
-    font-family: "Nanum Pen Script", cursive;
-    text-shadow: 2px 2px 2px #999999;
-    font-weight: 50;
+  font-size: 88px;
+  font-family: "Nanum Pen Script", cursive;
+  text-shadow: 2px 2px 2px #999999;
+  font-weight: 50;
 
-    margin: 0;
-    /* 택스트 쉐도워 
+  margin: 0;
+  /* 택스트 쉐도워 
 값 x축 y축 블러 색 ts
 콤마로 다중 그림자 사용가능
 */
@@ -69,12 +84,12 @@ width: 800%}
 /* 메뉴링크 */
 
 #gnb a {
-    text-decoration-line: none;
-    color: black;
-    font-size: 25px;
-    font-family: "Gugi", cursive;
-    margin-right: 5px;
-    margin-left: 5px;
+  text-decoration-line: none;
+  color: black;
+  font-size: 25px;
+  font-family: "Gugi", cursive;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 /* 가상클래스 : hover 마우스 오버시 */
@@ -82,51 +97,55 @@ width: 800%}
 결과적으로 첫번째 요소가 선택지않는다 */
 
 #gnb a.haha {
-    color: rgb(142, 26, 26);
-    text-decoration: underline;
-    text-decoration-style: wavy;
+  color: rgb(142, 26, 26);
+  text-decoration: underline;
+  text-decoration-style: wavy;
 }
 
 /* 로고이미지 */
 #gnb img {
-    border: 1px double #3dac6b;
-    width: 28px;
-    padding: 2px;
-    vertical-align: -8px;
+  border: 1px double #3dac6b;
+  width: 28px;
+  padding: 2px;
+  vertical-align: -8px;
 }
 
 /* 버티컬 얼라인 :인라인요소간 세로정렬 */
 
 /* 2.메인영역 */
 #cont {
-    margin: 10px auto;
+  margin: 10px auto;
 
-    background-color: #e6deff;
+  background-color: #e6deff;
 }
 /* 3.하단영역 */
 #info {
-    background-color: rgba(79, 196, 190, 0.514);
+  background-color: rgba(79, 196, 190, 0.514);
 }
 #info address {
-    font-family: "Gothic A1", sans-serif;
-    font-style: normal;
-    font-size: 18px;
+  font-family: "Gothic A1", sans-serif;
+  font-style: normal;
+  font-size: 18px;
 }
 
 /* 대표자 span */
 
 span.utxt {
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    text-decoration-color: rgb(255, 0, 0);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgb(255, 0, 0);
 }
 b.utxt {
-    text-decoration: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: blue;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: blue;
 }
-body{background-image: url(../image/backimg.jpg);}
+body {
+  background-image: url(../image/backimg.jpg);
+}
 
 /* 경제정치사회문화 */
-#gnb a:hover{color: rgb(255, 0, 0);
-    text-shadow: 0px 0px 7px black;}
+#gnb a:hover {
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 0px 7px black;
+}

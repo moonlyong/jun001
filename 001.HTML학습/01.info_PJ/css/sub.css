@@ -6,16 +6,16 @@
 /* 서브페이지 공통 글자 설정 */
 
 h2.stit {
-    color: black;
-    font-size: 36px;
-    font-family: "Gugi", cursive;
-    text-align: center;
-    text-shadow: 3px 3px 3px #34d5db66;
-    padding: 40px;
-    border-radius: 20px;
-    outline: 2px solid black;
-    box-shadow: 0px 0px 10px;
-    margin-bottom: 10px;
+  color: black;
+  font-size: 36px;
+  font-family: "Gugi", cursive;
+  text-align: center;
+  text-shadow: 3px 3px 3px #34d5db66;
+  padding: 40px;
+  border-radius: 20px;
+  outline: 2px solid black;
+  box-shadow: 0px 0px 10px;
+  margin-bottom: 10px;
 }
 
 /* 아웃라인 박스크기에 영향을 안줌
@@ -23,146 +23,244 @@ h2.stit {
 
 /* IT과학 배경 */
 .st4 {
-    /* bg 색 이미지 반복 위치 크기 */
-    /* 배경넣기 */
-    background: url(../image/gom.jpg) no-repeat center/cover;
+  /* bg 색 이미지 반복 위치 크기 */
+  /* 배경넣기 */
+  background: url(../image/gom.jpg) no-repeat center/cover;
 }
 
 .prlogo img {
-    height: 50px;
+  height: 50px;
 }
 
 /* 기사타이틀  */
 .atit {
-    font-size: 30px;
+  font-size: 30px;
 }
 /* 기사이미지 */
 .afig img {
-    width: 100%;
+  width: 100%;
 }
 .afig {
-    margin-bottom: 20px;
-    font-size: small;
-    text-align: center;
+  margin-bottom: 20px;
+  font-size: small;
+  text-align: center;
 }
 
 /* 자간 ls
 단어간격 ws
 양쪽정렬 justify */
-.mvbx{height: 450px;}
+.mvbx {
+  height: 450px;
+}
 
 /* 인용블록영역 */
-.bqbx{
-    padding: 20px 0;
-    margin: 20px 0;
-    border-top: 2px dashed #ccc;
-    border-bottom: 2px dashed #ccc;
-    font-size: 18px;
-
+.bqbx {
+  padding: 20px 0;
+  margin: 20px 0;
+  border-top: 2px dashed #ccc;
+  border-bottom: 2px dashed #ccc;
+  font-size: 18px;
 }
 /* 인용블록 이미지 */
-.bqbx img{float: right;
-width: 30%;
-border-radius: 20px;
-margin-left: 20px;}
+.bqbx img {
+  float: right;
+  width: 30%;
+  border-radius: 20px;
+  margin-left: 20px;
+}
 
-.bqbx blockquote{padding: 15px 0;
-line-height: 2;}
+.bqbx blockquote {
+  padding: 15px 0;
+  line-height: 2;
+}
 
 /* article 제목공통 */
-.atbx h5{
-
-    background-color: aquamarine;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 5px black;
-    margin: 0;
-
-
+.atbx h5 {
+  background-color: aquamarine;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px black;
+  margin: 0;
 }
 
 /* div와 같은 block요소는 wid설정을 하지않으면 오토로됨 */
-.mvbx iframe{border: none;
-width: 100%;
-height: 100%;
+.mvbx iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
 }
 
 /* 주해영역 */
-.desc{border-top: 2px dashed #ccc;
-    padding: 20px;
-    border-bottom: 2px dashed #ccc;}
-    
-    .desc div{padding: 10px 0;}
-
-
-
-.alink{text-align: right;}
-
-
-.alink a{border: 2px solid black;
-    font-family: 'Gugi', cursive; ;
-    line-height: 100px;
-    text-align: center;
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-border-radius: 50%;
-text-decoration: none;
+.desc {
+  border-top: 2px dashed #ccc;
+  padding: 20px;
+  border-bottom: 2px dashed #ccc;
 }
 
+.desc div {
+  padding: 10px 0;
+}
 
-.alink a:hover{color: rgb(255, 0, 0);
-background-color: rgb(231, 233, 136);
+.alink {
+  text-align: right;
+}
+
+.alink a {
+  border: 2px solid black;
+  font-family: "Gugi", cursive;
+  line-height: 100px;
+  text-align: center;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.alink a:hover {
+  color: rgb(255, 0, 0);
+  background-color: rgb(231, 233, 136);
 }
 .acont p {
-    font-size: 18px;
-    color: #303038;
-    /* 자간 : ls */
-    letter-spacing: 1px;
-    /* 단어간격 : ws */
-    word-spacing: 1px;
-    /* 양쪽정렬 */
-    text-align: justify;
-    /* 줄간격 lh */
-    line-height: 1.62;
-    /* 글자 라인간 간격을 조정함
+  font-size: 18px;
+  color: #303038;
+  /* 자간 : ls */
+  letter-spacing: 1px;
+  /* 단어간격 : ws */
+  word-spacing: 1px;
+  /* 양쪽정렬 */
+  text-align: justify;
+  /* 줄간격 lh */
+  line-height: 1.62;
+  /* 글자 라인간 간격을 조정함
     숫자만 쓰면 배수임(글자높이값에 대한배수)
     단위를 쓰면 단위에 맞게 줄간격 조정됨
     -> 줄간격의 응용은 버튼 등의 글자를
     세로 중앙에 오게 할때 박스높이값만큼 준다! */
 }
 
-.acont p em { 
-    /* 이탤릭 해제 */
-font-style: normal; 
-/* 글자색 변경 */
-color: rgb(187, 255, 0);
-/* 글자 두껍게 */
-font-weight: bold;
-/* 그림자 */
-text-shadow: 0px 0px 5px red;
-
+.acont p em {
+  /* 이탤릭 해제 */
+  font-style: normal;
+  /* 글자색 변경 */
+  color: rgb(187, 255, 0);
+  /* 글자 두껍게 */
+  font-weight: bold;
+  /* 그림자 */
+  text-shadow: 0px 0px 5px red;
 }
 
-
-.acont p mark{
-    display: block;
-    background-color: #ebebeb;
-    text-align: center;
-    margin: 10px auto;
-    padding: 10px 50px;
-    font-size: 50px;
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    font-family: "Nanum Pen Script", cursive;
-    width: 65%;
+.acont p mark {
+  display: block;
+  background-color: #ebebeb;
+  text-align: center;
+  margin: 10px auto;
+  padding: 10px 50px;
+  font-size: 50px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  font-family: "Nanum Pen Script", cursive;
+  width: 65%;
 }
-.snews {border-top: 2px dashed #ccc;
-    border-bottom: 2px dashed #ccc;}
 
+/* 짤뉴스 공통 class nbx */
+.nbx {
+  border-top: 2px dashed #ccc;
+  margin: 20px 0;
+  padding: 20px 0;
+}
 
-.cnews{border-top: 2px dashed #ccc;
-    border-bottom: 2px dashed #ccc;}
+/* nbx 타이틀 공통 */
 
-    .tdart{margin-bottom: 20px;}
+.nbx h3 {
+  font-family: "Gugi", cursive;
+  font-size: 25px;
+  background-image: linear-gradient(to right, rgb(0, 183, 255), transparent);
+  padding: 5px;
+}
+
+/* 주요뉴스 ul li */
+
+.cnews ul li::before {
+  content: "✅";
+}
+/* .cnews ul li::after {
+   content: '✅';
+} */
+
+/* 
+    [css 가상요소 : before after]
+    맨앞과 맨뒤에 가상요소를 사용할수 있다
+    필수속성 content - 글자나 이미지(url) 사용 
+*/
+
+/* 분야별 뉴스 dt */
+.snews dt {
+  font-family: "Gugi", cursive;
+  font-size: 25px;
+  text-shadow: 0px 0px 5px #6d5757;
+  color: #b30971;
+  background-color: rgb(255, 216, 216);
+  display: inline-block;
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+/* dd 앞에 가상요소 블릿 넣기 */
+
+.snews dd::before{content: '🌏';}
+
+/* nbx 공통 a 요소 */
+.nbx a {
+  font-size: 17px;
+  line-height: 2.5;
+  text-decoration: none;
+  color: #222;
+  font-family: "Gothic A1", sans-serif;
+}
+
+/* nbx 공통 마우스 오버 */
+
+.nbx a:hover {
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 0px 5px rgb(150, 131, 131);
+}
+/* 오늘의작품 tdart */
+.tdart {
+  text-align: center;
+  margin: 20px 0;
+
+  /* 그라데이션 이미지로 */
+  /* 
+    1. 방향 to ~~~~
+    2. 각도 ~deg
+    3. % 를 쓰면 색상비율 조정가능
+    */
+  background-image: linear-gradient(to top right, red, yellow);
+
+  /* 
+        배경옵션 추가
+        backg clip :배경이 적용되는 범위 설정
+        1. border-box - 보더까지 적용 (기본값)
+        2. padding-box - 패딩까지 적용
+        3. content-box - 내용영역만 적용 (패딩보더 빠짐)
+
+  */
+
+  border: 20px ridge rgb(153, 99, 38);
+}
+
+.tdart img {
+  border: 10px ridge rgb(219, 218, 218);
+}
+.tdart h3 {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 30px;
+}
+.tdart figcaption {
+  font-family: "Gugi", cursive;
+  padding: 10px 0 20px;
+}
