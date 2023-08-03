@@ -180,11 +180,34 @@ h2.stit {
   padding: 5px;
 }
 
+/* 말줄임표시 공통처리 */
+
+.nbx li,
+.nbx dd,
+.nbx td {
+  /* 줄바꿈방지 */
+  white-space: nowrap;
+  /* 넘치는거 숨기기 o h */
+  overflow: hidden;
+  /* 넘치는글자 말줄임표시 tv */
+  text-overflow: ellipsis;
+
+  /* 
+      여러줄일때 아래 3가지 추가
+       display: -webkit-box;
+    -webkit-line-clamp: 라인수
+    -webkit-box-orient: vertical;
+  
+  
+  */
+}
+
 /* 주요뉴스 ul li */
 
 .cnews ul li::before {
   content: "✅";
 }
+
 /* .cnews ul li::after {
    content: '✅';
 } */
@@ -194,6 +217,19 @@ h2.stit {
     맨앞과 맨뒤에 가상요소를 사용할수 있다
     필수속성 content - 글자나 이미지(url) 사용 
 */
+
+/*주요뉴스 리스트별 글자색 바꾸기 */
+.cnews li:first-child a {
+  color: red;
+}
+
+.cnews li:nth-child(2) a {
+  color: blue;
+}
+
+.cnews li:nth-child(3) a {
+  color: green;
+}
 
 /* 분야별 뉴스 dt */
 .snews dt {
@@ -209,9 +245,36 @@ h2.stit {
   margin-top: 20px;
 }
 
+/* dt별 글자색 배경색 변경 */
+
+.snews dt:first-of-type {
+  color: red;
+}
+
+.snews dt:nth-of-type(2) {
+  color: blue;
+}
+.snews dt:last-of-type {
+  color: green;
+}
+/* 
+    [ 자식요소 선택 가상클래스 : 자식요소 종류가 같아야함! ]
+    요소:first-child -> 첫번째 자식요소
+    요소:nth-child(n) -> n번째 자식요소
+    요소:last-child -> 마지막째 자식요소
+
+
+    [ 여러종류가 섞여 있을 경우 형제 선택하기 ]
+    요소:first-of-type -> 같은 요소 중 첫번째
+    요소:nth-of-type(n) -> 같은 요소 중 n번째
+    요소:last-of-type -> 같은 요소 중 마지막째 
+    */
+
 /* dd 앞에 가상요소 블릿 넣기 */
 
-.snews dd::before{content: '🌏';}
+.snews dd::before {
+  content: "🌏";
+}
 
 /* nbx 공통 a 요소 */
 .nbx a {
