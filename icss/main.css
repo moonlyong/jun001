@@ -24,13 +24,12 @@ ol {
 /* 전체 배경 */
 body {
   background: url(../godeees.jpg) no-repeat fixed center/cover;
-  font-family: 'Gugi', cursive;
+  font-family: "Gugi", cursive;
   font-weight: lighter;
   font-size: 20px;
   color: rgba(10, 8, 116, 0.664);
   text-shadow: 0px 0px 5px white;
   line-height: 1.8;
-
 }
 .wrap {
   background-color: rgba(240, 248, 255, 0.397);
@@ -38,22 +37,20 @@ body {
   border-radius: 20px;
   margin: 0 auto;
   padding: 20px;
-  
 }
 
 /* 메인타이틀 */
 .tit {
   text-align: center;
-  padding-bottom: 
-  70px;
+  padding-bottom: 70px;
 }
 
-.tit img{float: right;
-margin: 30px;}
-.wrap a{width: 50px;
-   border: 1px solid rgb(255, 255, 255);
-   border-radius: 10px;
+.wrap a {
+  width: 50px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
   padding: 8px;
 }
-.wrap a:hover{
-    background-color: aliceblue;}
+.wrap a:hover {
+  background-color: aliceblue;
+}
