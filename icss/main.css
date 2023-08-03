@@ -44,7 +44,12 @@ body {
 /* 메인타이틀 */
 .tit {
   text-align: center;
+  padding-bottom: 
+  70px;
 }
+
+.tit img{float: right;
+margin: 30px;}
 .wrap a{width: 50px;
    border: 1px solid rgb(255, 255, 255);
    border-radius: 10px;
