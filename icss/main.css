@@ -32,20 +32,18 @@ body {
   line-height: 1.8;
 }
 
-.tit::before {
-  content: url(../imgs/mllogo2.png);
-  display: inline;
-  
-}
 .wrap {
   background-color: rgba(240, 248, 255, 0.397);
-  width: 80%;
+  width: 50%;
   border-radius: 20px;
   margin: 0 auto;
   padding: 20px;
 }
 
 /* 메인타이틀 */
+.mllogo{position: relative;
+
+left: 35%;}
 .tit {
   text-align: center;
   padding-bottom: 70px;
