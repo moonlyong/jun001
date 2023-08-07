@@ -41,7 +41,8 @@ body {
 }
 
 /* 메인타이틀 */
-.mllogo{position: relative;
+.mllogo{width: 200px;
+  position: relative;
 
 left: 35%;}
 .tit {
