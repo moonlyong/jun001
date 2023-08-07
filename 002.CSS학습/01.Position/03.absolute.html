@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>03.absolute 포지션</title>
+    <style>
+      .bx {
+        width: 100px;
+        height: 100px;
+        border: 2px solid blue;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold; /* fwb */
+        /* 글자세로중앙 */
+        line-height: 100px;
+      }
+
+      /* 첫번째 박스에 포지션 체크 */
+      #r1 {
+        /* por */
+        position: relative;
+        /* 위치이동값 */
+        top: 50px;
+        left: 50px;
+
+        z-index: 1;
+        /* 먼저 그렷지만 z가 r2보다 높음 */
+        background-color: #2c29c7;
+      }
+
+      #s1 {
+        background-color: lightcoral;
+      }
+
+      #r2 {
+        background-color: #c42c78;
+        position: relative;
+        bottom: 30px;
+        left: 50px;
+      }
+
+      /* 첫번째 앱솔루트 */
+      #a1 {
+        background-color: aqua;
+        position: absolute;
+        /******************************************************* 
+              
+            [3. absolute 포지션]
+            -부모박스위치를 기준으로 이동하는 포지션
+            (위치속성을 쓴 경우에만)
+
+            1.앱솔은 위치이동값을 쓰기 전과 후로 나눈다
+
+              1) 안쓴경우 자기보다 위에있는 static 요소를 존중하여
+              카만히 있는다 (젠틀 앱솔루트)
+              +어떤 자식요소 있을경우 
+              그 부모박스에 자격이 없는경우에도 가만히 위치한다
+              아래쪽에 위치하고있는 static 요소는 앱솔루트를 인식하지
+              못하여 같은자리에 위치함 
+              
+
+              2) 위치 이동값을 사용한경우
+              -위치이동값을 사용 한 부분에 대해서만 static이 아닌 부모를 기준으로 
+              움직임
+
+              staitc이 아닌 포지션이란
+              relative/absolute/fixed/sticky
+
+              위치이동값을 쓰지 않은 부분에 대해서는 부모를 찾지않는다
+
+              부모자격이있는 부모요소 중 가장가까운것이 부모다
+
+              모두없으면 window가 부모 그리고 그자리 고정
+
+              -또한 w h 값을 %로 주면 
+              부모자격을 기준으로 잡음 (일반적으로 싸고있는 박스기준으로함)
+
+
+            2.앱솔에 가로 세로 크기를 주지않은경우
+            일반적으로 block 요소이므로 w오토로써 부모박스 끝까지 차지하지만
+            앱솔은 내용만큼만 그 크기를 잡는다
+
+            3.원래 block 이 아닌요소를 앱솔을 줄경우 자동으로 displaY 블록으로 
+            이유는 자동크기를 설정할경우 블록이 아니면 크기설정 불가
+            -일반적으로 앱솔포지션은 블록이다
+
+
+
+                
+        *******************************************************/
+      }
+      #s2 {
+        background-color: lightblue;
+      }
+
+      #a2 {
+        /* 두번째 앱솔루트 */
+        position: absolute;
+        background-color: #1e889b;
+
+        bottom: 0;
+        left: 0;
+        /* 부모는? window */
+      }
+
+      /* 부모를 찾는 앱솔루트 */
+      .bx2 {
+        border: 2px dotted olive;
+        padding: 50px;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      /* 각 부모박스 */
+      .s5 {
+        background-color: lightblue;
+        position: relative;
+      }
+      .s6 {
+        background-color: lightcoral;
+        position: relative;
+      }
+      .s7 {
+        background-color: lawngreen;
+        /* position: relative; */
+      }
+      .s8 {
+        background-color: lightgoldenrodyellow;
+        /* position: relative; */
+        /* position: absolute; */
+        /* top: 100px; */
+        /* right: 100px; */
+      }
+
+      /* 부모를 찾는 앱솔루트 박스 */
+      .abs {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        color: #fff;
+        background: url(./images/ab1.jpg) no-repeat center/cover;
+      }
+      /* a3는 위치이동값이 ㅇ벗으므로 젠틀하다 싸고있는 박스안에 가만히 있는다 */
+
+      .a4 {
+        top: 0;
+        /* left: 0; */
+      }
+
+      .spabs {
+        position: absolute;
+        bottom: 100px;
+        right: 100px;
+        border: 4px solid;
+        margin: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .bx#s$*3 -->
+    <div class="bx" id="r1">r1</div>
+    <div class="bx" id="s1">s1</div>
+    <div class="bx" id="a1">a1</div>
+    <div class="bx" id="r2">r2</div>
+    <div class="bx" id="s2">s2</div>
+    <div class="bx" id="a2">a2</div>
+
+    <!--  -->
+    <div class="bx2 s5">
+      s5
+      <div class="bx2 s6">
+        s6
+        <div class="bx2 s7">
+          s7
+          <div class="bx2 s8">
+            s8
+            <div class="abs a3">a3</div>
+            <div class="abs a4">a4</div>
+            <span class="spabs">나는 span앱솔임</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 젠코딩 (에밋코딩)
+        .: 클래스
+        #: 아이디
+        $: 1~숫자n
+        *n: 반복횟수
+        {}: 내용
+        []: 속성 세팅값
+        >: 하위직계 자식요소
+        +: 형제요소
+        (): 요소 구분하기
+        -->
+    <table></table>
+  </body>
+</html>
