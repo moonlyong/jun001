@@ -11,7 +11,13 @@
     font-family: 'Chakra Petch', sans-serif;
     font-family: 'Orbitron', sans-serif;
 */
-
+/* 공통클래스 */
+.metal1 {
+  background: url(../images/metal01.jpg) no-repeat center/cover;
+}
+.metal2 {
+  background: url(../images/metal02.jpg) no-repeat center/cover;
+}
 /* 초기화 */
 html,
 body,
@@ -45,14 +51,14 @@ body * {
     마진탑을 포함 하려면 부모요소에 overflow:hidden
     을 셋팅해야함
     + 하단마진도 마찬가지  */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 /* 로봇박스 */
 .box-robot {
   /* 패딩은 위 아래 */
   padding: 200px 0 50px;
   /* top */
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 /* 머리 */
 .head {
@@ -64,18 +70,49 @@ body * {
   /* 머리에 붙어있는 하위 앱솔루트의 부모자격 */
   position: relative;
   border-radius: 20% 20% 50% 50%;
+  z-index: 1;
 }
 /* 머리카락 가상요소 */
-.head::after{
-    content: '';
-    display: block;
-    /* div 넣은듯한 세팅 */
-    position: absolute;
-    bottom: 135px;
-    left: -53px;
-    width: 345px;
-    height: 300px;
-    background: url(../images/custom.png) no-repeat center/100%;
+.head::after {
+  content: "";
+  display: block;
+  /* div 넣은듯한 세팅 */
+  position: absolute;
+  /* 부모는 ? head */
+  bottom: 135px;
+  left: -53px;
+  width: 345px;
+  height: 300px;
+  background: url(../images/custom.png) no-repeat center/100%;
+}
+.head::before {
+  content: "";
+  display: block;
+}
+/* 오버시 머리카락 가상요소 변경 */
+.head:hover::after {
+  content: "";
+  display: block;
+  /* div 넣은듯한 세팅 */
+  position: absolute;
+  bottom: 2px;
+  left: -72px;
+  width: 380px;
+  height: 350px;
+
+  background: url(../images/blond.png) no-repeat center/100%;
+}
+/* 오버시 수염 */
+.head:hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 25px;
+  left: 76px;
+  width: 100px;
+  height: 100px;
+
+  background: url(../images/수염.png) no-repeat center/100%;
 }
 /* 눈 공통 */
 .eye {
@@ -93,8 +130,9 @@ body * {
   background: #fff;
 }
 
-/* 대가리 부속물 공통 */
-.head > div {
+/* 대가리/몸통 부속물 공통 */
+.head > div,
+.body > div {
   position: absolute;
 }
 /* 왼쪽 */
@@ -131,19 +169,76 @@ body * {
   width: 50px;
   height: 80px;
   background: url(../images/metal02.jpg);
-
 }
 /* 왼쪽귀 */
-.ear1{
-    left: -50px;
-    border-radius: 50px 0 0 20px;
+.ear1 {
+  left: -50px;
+  border-radius: 50px 0 0 20px;
 }
 /* 오른쪽 */
-.ear2{
-    right: -50px;
-    border-radius: 0 50px 20px 0;
+.ear2 {
+  right: -50px;
+  border-radius: 0 50px 20px 0;
 }
 /* 몸통 */
+.body {
+  position: relative;
+  /* 부모자격주기 
+  하위자식들 div 앱솔루트 */
+  width: 250px;
+  height: 400px;
+  /* 중앙정렬 마영오 */
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+/* 목 */
+.neck {
+  top: -50px;
+  left: calc(50% - 25px);
+  /* 50%-자기크기절반 */
+  width: 50px;
+  height: 80px;
+}
+/* 팔공통 */
+.arm {
+  width: 50px;
+  height: 200px;
+}
+.arm1 {
+  left: -50px;
+}
+.arm2 {
+  right: -50px;
+}
+
+/* 다리 */
+.leg {
+  top: 100%;
+  width: 80px;
+  height: 250px;
+}
+.leg1 {
+  left: 0;
+}
+.leg2 {
+  right: 0;
+}
+/* 어깨 */
+.shdr{
+  width: 80px;
+  height: 80px;
+  top: -15px;
+}
+.shdr1{
+  left: -65px;
+  border-radius: 50% 0 50% 50%;
+}
+.shdr2{
+right: -65px;
+border-radius: 0 50% 50% 50%;
+}
+/* TV */
 /* 로봇 설명박스 */
 /*************** 하단영역 ***************/
 /* 회사정보 */
