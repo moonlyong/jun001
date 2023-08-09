@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+/* Robot PJ 메인 CSS - robot.css */
+
+/* 웹폰트 CDN */
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Black+Ops+One&family=Chakra+Petch&family=Orbitron:wght@500&display=swap");
+
+/* 
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Black Ops One', cursive;
+    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+*/
+
+/* 초기화 */
+html,
+body,
+h1,
+h2,
+h3,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 전체배경이미지 */
+  background: url(../images/bg.jpg) no-repeat fixed top/cover;
+}
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed yellow;
+}
+
+/*************** 상단영역 ***************/
+/* 로고 */
+/* 링크 타이틀 */
+/* 탑이동 버튼 */
+/*************** 메인영역 ***************/
+.main-aria {
+  /* 첫번째 자식요소 블록박스에 마진 탑을 준경우
+    그 마진값은 부모요소 바깥쪽으로 나간다 (기본성질)
+    마진탑을 포함 하려면 부모요소에 overflow:hidden
+    을 셋팅해야함
+    + 하단마진도 마찬가지  */
+  overflow: hidden;
+}
+/* 로봇박스 */
+.box-robot {
+  /* 패딩은 위 아래 */
+  padding: 200px 0 50px;
+  /* top */
+  margin-top: 30px;
+}
+/* 머리 */
+.head {
+  width: 250px;
+  height: 250px;
+  /*무대중앙 마영오 */
+  margin: 0 auto;
+  background: url(../images/metal01.jpg) no-repeat center/cover;
+  /* 머리에 붙어있는 하위 앱솔루트의 부모자격 */
+  position: relative;
+  border-radius: 20% 20% 50% 50%;
+}
+/* 머리카락 가상요소 */
+.head::after{
+    content: '';
+    display: block;
+    /* div 넣은듯한 세팅 */
+    position: absolute;
+    bottom: 135px;
+    left: -53px;
+    width: 345px;
+    height: 300px;
+    background: url(../images/custom.png) no-repeat center/100%;
+}
+/* 눈 공통 */
+.eye {
+  /*  */
+  top: 50px;
+  width: 50px;
+  height: 50px;
+  /* 원형 */
+  border-radius: 50%;
+  /* 이중선보더 */
+  border: 4px double #000;
+  /* 배경공통 */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background: #fff;
+}
+
+/* 대가리 부속물 공통 */
+.head > div {
+  position: absolute;
+}
+/* 왼쪽 */
+.eye1 {
+  left: 50px;
+  background: url(../images/e11.png) no-repeat center/55px;
+}
+/* 오른쪽 */
+.eye2 {
+  right: 50px;
+  background: url(../images/e22.png) no-repeat center/50px;
+}
+/* 코 */
+.nose {
+  width: 60px;
+  height: 80px;
+  background: url(../images/nose1.png) no-repeat center/cover;
+  bottom: 80px;
+  left: 95px;
+  border-radius: 300px 300px 200px 200px;
+}
+/* 아가리 */
+.mouth {
+  width: 100px;
+  height: 30px;
+  background: url(../images/mouth.png) no-repeat center/100% 100%;
+  bottom: 35px;
+  left: 75px;
+}
+
+/* 귀 공통 */
+.ear {
+  top: 70px;
+  width: 50px;
+  height: 80px;
+  background: url(../images/metal02.jpg);
+
+}
+/* 왼쪽귀 */
+.ear1{
+    left: -50px;
+    border-radius: 50px 0 0 20px;
+}
+/* 오른쪽 */
+.ear2{
+    right: -50px;
+    border-radius: 0 50px 20px 0;
+}
+/* 몸통 */
+/* 로봇 설명박스 */
+/*************** 하단영역 ***************/
+/* 회사정보 */
