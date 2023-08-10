@@ -206,8 +206,8 @@ body {
 
 #trans9:hover img {
   /* 다중 트랜스폼 tf */
-  transform: scale(1.5) skew(30deg) translateY(200px) rotatex(9600deg) rotatey(9600deg) rotatez(9600deg) ;
-transition-duration: 3s;
+  transform: scale(1.5) rotatex(10800deg) rotatey(10800deg) rotatez(10800deg) ;
+transition-duration: 2s;
   /* 트랜지션 시간늘리기 */
 }
 
@@ -236,34 +236,41 @@ transition-duration: 3s;
 
 /* 1. 보거미 원본 */
 #trans10 img:last-child {
-  /* 0도 회전하기 */
-  transform: ;
+  /* 0도 회전하기 - 안써도 초기값 0deg */
+  transform: rotatey(0deg);
+  
 
   /* 트랜지션: 속시이지 - 0.4초기다림 */
+  transition:  .5s ease-out .5s ;
 
   /* ease-out 나중에 천천히 처음엔 등속도 */
 }
 /* 2. 보거미 오버시 */
 #trans10:hover img:last-child {
   /* 90도 회전하기 */
-
+ transform: rotatey(270deg);
   /* 트랜지션: 속시이지 - 기다림없음 */
+  transition: .5s ease-in;
 
   /* ease-in 처음에 천천히 나중엔 등속도 */
 }
 /* 3. 유정이 원본 */
 #trans10 img:first-child {
   /* 90도 회전하기(처음상태) */
+  transform: rotatey(270deg);
 
   /* 트랜지션: 속시이지 - 기다림없음 */
+  transition:  .5s ease-in;
 
   /* ease-in 처음에 천천히 나중엔 등속도 */
 }
 /* 4. 유정이 오버시 */
 #trans10:hover img:first-child {
   /* 0도 회전하기 */
+  transform: rotatey(0deg);
 
   /* 트랜지션: 속시이지 - 0.4초기다림 */
+  transition: .5s ease-out .5s   ;
 
   /* ease-out 나중에 천천히 처음엔 등속도 */
 }
