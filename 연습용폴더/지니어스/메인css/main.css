@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+@import url(./common.css);
+/* 회사 로고 */
+
+h1 {
+  width: 166px;
+  height: 94px;
+  position: relative;
+  top: 50px;
+  left: 10%;
+
+  background: url(./이미지/로고이미지/JTBC로고.png) no-repeat center/250%;
+}
+
+/* 첫번째 메인 */
+.topbg {
+  background: url(./이미지/메인w.jpg) no-repeat center/90% 100%;
+}
+/* 두번째 메인 */
+.secbg {
+  background: url(./이미지/잠실야구장.jpg)no-repeat center/90% 100%;
+}
+/* 메뉴링크 */
+.menulink {
+  position: fixed;
+  top: 50px;
+  right: 10%;
+}
+.menulink a {
+  text-decoration: none;
+  font-size: 20px;
+  color: aliceblue;
+  text-shadow: 0px 0px 5px #000;
+  padding-left: 30px;
+}
+/* 문구 */
+.maincomment {
+  font-size: 25px;
+  width: 400px;
+  height: 210px;
+  color: aliceblue;
+  text-shadow: 0px 0px 5px #000;
+  position: relative;
+  top: 30%;
+  left: 15%;
+}
+/* 다시보기 로고 */
+.brandlogo {
+  text-align: right;
+  top: 10%;
+  right: 10%;
+  width: 400px;
+  height: 100px;
+}
+.brandlogo li {
+  display: inline-block;
+  width: 110px;
+  height: 70px;
+  /* border: 1px solid green; */
+}
+.brandlogo li + li {
+  margin-left: 21px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.Tvinglogo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(./이미지/로고이미지/티빙pc.png) no-repeat center/100%;
+}
+.netflexlogo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(./이미지/로고이미지/디즈니플러스.png) no-repeat center/100%;
+}
+.disenylogo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(./이미지/로고이미지/넷플릭스pc.png) no-repeat center/100%;
+}
+.logobx1{
+    width: 300px;
+    height: 300px;
+    right: -80%;
+    bottom: -65%;
+  
+
+}
+.msterlogo{
+    bottom:0px;
+    right: 20%;
+    width: 580px;
+    height: 150px;
+    background: url(./이미지/로고이미지/최강야구\ 로고.png)no-repeat center/100%;
+}
+.logobx1 .monsters{
+left: 0%;
+bottom: 40%;    
+}
