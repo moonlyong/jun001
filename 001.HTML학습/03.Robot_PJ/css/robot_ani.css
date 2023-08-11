@@ -1,3 +1,227 @@
 @charset "utf-8";
 
 /* Robot PJ - 애니메이션 CSS */
+
+/*******************************************************
+        [css 애니매이션]
+        -css 속성변화를 장면으로 구성하여
+        애니메이션을 화면에 연출해주는 속성
+
+        [애니메이션 키프레임]
+        -애니메이션 속성변화를 지정하는 코딩영역
+
+        [2장면 코딩법]
+        @keyframes
+        from{} 시작 css
+        to{} 끝 css
+
+        @keyframes
+        0% 시작 css
+        100% 끝 css
+
+        [여러장면 코딩법]
+        @keyframes
+        0% 시작 css
+        n% 중간 css
+        ...........
+        100% 끝 css
+
+        첫장면이 css에 설정되어잇으면 시작부분을 생략할수잇다
+
+        [설정된 키프레임 호출하는법]
+
+        animation : 이시이지반방마
+        
+1) 이름(animation-name) : keyframe 이름
+2) 시간(animation-duration) : 애니메이션 동작시간(초단위:s)
+3) 이징(animation-timing-function) : easing 가속도
+4) 지연(animation-delay) : 애니메이션 시작지연시간(초단위:s)
+5) 반복여부(animation-iteration-count) : 애니메이션 반복횟수
+    - 기본값 1, 숫자를 쓰면 반복횟수
+    - 영원히는 infinite(인피니트)
+6) 방향(animation-direction) : 시작->끝
+    - 대체경로 설정하기 : alternate : 시작->끝,끝->시작
+    - 대체경로는 반복횟수가 2이상 또는 infinite 이여야함
+7) 마지막상태(animation-fill-mode) : 애니메이션이 끝났을때
+    - 처음상태로 돌아가는 것이 기본!
+    - 마지막 상태를 유지하고 싶을때 forwards(앞쪽에...즉,애니끝장면)
+
+ *******************************************************/
+@keyframes logo-ani {
+  /* from{} 첫상태 이미 설정해서 생략 */
+  60% {
+    top: 50px;
+    left: 50px;
+    transform: scale(1);
+  }
+  100% {
+    top: 50px;
+    left: 50px;
+    /* 회전상태 추가 */
+    transform: scale(1) rotate(-25deg);
+  }
+}
+
+/* 로고이동 호출하기 대상:.logo */
+
+.logo {
+  animation: 
+  /* 1초후 작동 */ logo-ani 1.5s ease-in-out 1s forwards,
+    swing-ani 0.5s ease-in-out 2.5s infinite alternate;
+}
+@keyframes swing-ani {
+  from {
+    transform: rotate(-25deg);
+  }
+  to {
+    transform: rotate(25deg);
+  }
+}
+
+/* 로봇 위치 /크기변경 애니 */
+@keyframes robot-ani {
+  to {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+/* 로봇애니 호출 */
+.box-robot {
+  animation: robot-ani 5s linear 3s forwards,
+    robot-ani2 5s cubic-bezier(1, -0.01, 0.4, 1) 3s;
+}
+
+@keyframes robot-ani2 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 대구빡 */
+.head{
+   animation: head-ani 0.8s ease-in-out 8s infinite alternate; 
+}
+/* 대구빡 키프레임 */
+@keyframes head-ani {
+   from{
+      transform:scale(1) translate(0, 0) rotate(25deg);
+   
+   }
+   to {
+     transform:scale(1.1) translate(0, 70px) rotate(-25deg);
+   }
+ }
+
+/* 왼팔 키프레임 */
+@keyframes left-arm-ani-01 {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-80deg);
+  }
+}
+
+@keyframes left-arm-ani-02 {
+  0% {
+    transform: rotate(-110deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* 오른팔 키프레임 */
+@keyframes right-arm-ani-01 {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(-80deg);
+  }
+}
+
+@keyframes right-arm-ani-02 {
+  0% {
+    transform: rotate(-110deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* 왼팔 애니 호출 */
+.arm {
+  animation: right-arm-ani-01 0.2s ease-in 8s infinite alternate;
+  transform-origin: top;
+}
+.arm span {
+  animation: right-arm-ani-02 0.2s ease-in 8s infinite alternate;
+  transform-origin: top;
+}
+
+/* 오른팔 애니 호출 */
+.arm2 {
+  animation: right-arm-ani-01 0.2s ease-in 8s infinite alternate;
+  transform-origin: top;
+}
+.arm2 span {
+  animation: right-arm-ani-02 0.2s ease-in 8s infinite alternate;
+  transform-origin: top;
+}
+
+/* 왼쪽다리 호출 */
+.leg1 {
+  animation: left-leg-ani-01 0.8s cubic-bezier(0.71, 0.01, 1, -0.09) 8s infinite alternate;
+  transform-origin: top;
+}
+.leg1 span {
+  animation: left-leg-ani-02 0.8s cubic-bezier(0.71, 0.01, 1, -0.09) 8s infinite alternate;
+  transform-origin: top;
+}
+
+/* 오른쪽다리 호출 */
+.leg2 {
+  animation: right-leg-ani-01 0.8s cubic-bezier(0.71, 0.01, 1, -0.09) 8.8s infinite alternate;
+  transform-origin: top;
+}
+.leg2 span {
+  animation: right-leg-ani-02 0.8s cubic-bezier(0.71, 0.01, 1, -0.09) 8.8s infinite alternate;
+  transform-origin: top;
+}
+
+/* 왼쪽다리 키프레임 */
+@keyframes left-leg-ani-01 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(150deg);
+  }
+}
+@keyframes left-leg-ani-02 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-150deg);
+  }
+}
+
+/* 오른쪽다리 키프레임 */
+@keyframes right-leg-ani-01 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-150deg);
+  }
+}
+@keyframes right-leg-ani-02 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(150deg);
+  }
+}
