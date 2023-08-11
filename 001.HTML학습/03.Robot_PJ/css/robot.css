@@ -94,11 +94,13 @@ body * {
 
 /* 로봇박스 */
 .box-robot {
+  position: fixed;
   /* 패딩은 위 아래 */
-  padding: 200px 0 650px;
+  width: 100%;
+  padding: 200px 0 550px;
   /* top */
   /* margin-top: 30px; */
-  transform: scale(0.1) translate(100%, -200%) rotate(90deg);
+  transform: scale(0.1) translate(180%, -80%) rotate(90deg);
 }
 /* 머리 */
 .head {
@@ -219,8 +221,9 @@ body * {
   width: 100px;
   height: 30px;
   background: url(../images/mouth.png) no-repeat center/100% 100%;
-  bottom: 35px;
+  bottom: 40px;
   left: 75px;
+  transform: scale(.7,1.2);
 }
 .mouth2 {
   width: 70px;
@@ -490,15 +493,31 @@ body * {
   border-radius: 0 50% 50% 50%;
 }
 /* TV */
-.TV {
-  top: 10%;
+.tv{
+  top: 8%;
   left: 50%;
-  transform: translatex(-50%);
-  /* 중앙정렬 */
-  width: 200px;
-  height: 140px;
-  /* 배경 */
-  background: url(../images/tva.png) no-repeat 0/100%;
+  /* left방향 중앙이동 */
+  transform: translateX(-50%) scale(1);
+  z-index: 10;
+
+  width: 180px;
+  height: 125px;
+
+  /* border: 2px solid #222; */
+  border-radius: 5px;
+  /* box-shadow: inset 0 0 10px #000; */
+
+  /* 배경이미지 */
+  background: 
+  url(../images/tv-removebg-preview.png) no-repeat 0/100%;
+
+  /* 트랜지션: 속시이지 */
+  transition: 1.2s ease-in-out;
+  
+}
+
+.tv.on{
+  transform: translateX(-50%) scale(3);
 }
 
 /* 스크린 */
@@ -519,7 +538,19 @@ body * {
   left: -25px;
   width: 133%;
   height: 100%;
-  border-radius: 15px;
+  border: none;
+}
+
+/* 동영상 선택박스 */
+.box-bth{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 100px;
+}
+.box-bth button{
+  width: 100%;
 }
 /* 로봇 설명박스 */
 /*************** 하단영역 ***************/

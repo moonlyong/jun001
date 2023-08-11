@@ -225,3 +225,15 @@
     transform: rotate(150deg);
   }
 }
+
+/* 입 나불 키프레임 */
+@keyframes mouth-ani {
+  to{
+    transform: scale(1.2,.7);
+  }
+  
+}
+/* 입 나불 */
+.mouth{
+  animation: mouth-ani .08s linear 8s infinite alternate;
+}

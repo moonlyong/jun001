@@ -55,18 +55,32 @@
             <div class="shdr shdr1 metal1"></div>
             <div class="shdr shdr2 metal1"></div>
             <!-- TV -->
-            <div class="TV">
+            <div class="tv">
               <div class="screen">
                 <!-- 유튜브 동영상 -->
                 <iframe
-                  src="https://www.youtube.com/embed/pXtWmV4XAwU" id="mv"                
+                  id="mv"
+                  src="https://www.youtube.com/embed/pXtWmV4XAwU"
+                  allow="autoplay"
                 ></iframe>
                 <!-- 영상아이디 
                   pXtWmV4XAwU
                   NFJ10iqNgMo
                   CqBAVQOkui0
                 -->
-                
+              </div>
+              <!-- 조작버튼 -->
+              <!-- 이벤트 속성값으로 함수를 호출
+                    onclick="값"
+                    onclick="함수명(값)"
+
+              -->
+              <div class="box-bth">
+                <button onclick="바꿔('pXtWmV4XAwU')">ch1</button>
+                <button onclick="바꿔('NFJ10iqNgMo')">ch2</button>
+                <button onclick="바꿔('CqBAVQOkui0')">ch3</button>
+                <!-- 축소 확대 버튼 -->
+                <button onclick="커짐()">▣</button>
               </div>
             </div>
           </div>
@@ -81,5 +95,60 @@
         <!-- 회사정보 -->
       </footer>
     </div>
+
+    <!-- 자바스크립트 코딩구역 -->
+    <script>
+      // 자바스크립트 문법이 적용되는곳
+      // js가 하는일
+      // 1. html변경
+      // 2. css변경
+
+      // 필수로 하는것은
+      // 요소 선택하기
+      // element-> 요소 ->태그
+      // 요소들이 모여있는 웹문서 전체구조 -> Dom
+      // document object model
+
+      // 보관장소 = 물건
+      // 변수 = 값
+      // 이퀄 오른쪽값이 왼쪽에 들어감  x <--- a
+      // 여기를 봐 ~ var(변수선언)
+      var 나야나 = document.getElementById("mv").src;
+
+      // document 객체를 통하여 하위요소들로 접근
+
+      // 자스는 마지막에 세미콜론 찍어주삼.
+
+      // 콘....솔
+      // console
+      // 로......그
+      // log
+
+      console.log("내꺼얌:", 나야나);
+
+      // 콘솔 위치 f12 콘솔탭
+
+      function 바꿔(먹이) {
+        console.log("영상바꿔", 먹이);
+        // 아이프레임요소.src=동영상 값
+        document.getElementById("mv").src =
+          "https://www.youtube.com/embed/" + 먹이 + "?autoplay=1";
+
+        // src 할당값
+        console.log("src할당값:", "https://www.youtube.com/embed/" + 먹이);
+      }
+
+      // TV배율변경
+
+      function 커짐(){
+        console.log("커지냐?");
+        // 클래스 제어하기
+        document.getElementsByClassName("tv").item(0).classList.toggle("on");
+      }
+      // getElementsByClassName 클래스명
+      // item - 클래스중 순번 0부터
+      
+      // 커짐 함수
+    </script>
   </body>
 </html>
