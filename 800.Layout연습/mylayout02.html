@@ -12,7 +12,11 @@
         outline-color: blue;
       }
       html,
-      body {
+      body,
+      h1,
+      h2,
+      h3,
+      h4 {
         margin: 0;
         padding: 0;
       }
@@ -23,7 +27,8 @@
       }
       /* 클리어 설정 가상요소
       float에 의한 망가짐 방지 */
-      .inbox::after, group-part::after{
+      .inbox::after,
+      group-part::after {
         content: "";
         display: block;
         clear: both;
@@ -89,10 +94,10 @@
       }
 
       /* 배너영역 */
-      
-            .banner .partbox {
-              height: 300px;
-            }
+
+      .banner .partbox {
+        height: 300px;
+      }
 
       /* 메인영역 : group-part*/
 
@@ -105,10 +110,10 @@
       .main .group-part-03 .partbox {
         height: 220px;
       }
-      .main.group-part-04.partbox {
+      .main .group-part-04 .partbox {
         height: 280px;
       }
-      .main.group-part-05.partbox {
+      .main .group-part-05 .partbox {
         height: 240px;
       }
 
@@ -117,7 +122,6 @@
       .footer .partbox {
         height: 100px;
       }
-
     </style>
   </head>
   <body>
@@ -134,6 +138,7 @@
     <!-- 배너영역 -->
     <div id="banner">
       <section class="banner inbox">
+        <h2>메인배너</h2>
         <!-- 파트박스 2개 -->
         <div class="partbox col-9"></div>
         <div class="partbox col-3"></div>
@@ -144,28 +149,61 @@
       <main class="main inbox">
         <!-- 파트 그룹박스 5개 -->
         <div class="group-part group-part-01">
+          <h2>배너바로가기</h2>
           <!-- 파트 3개 -->
           <div class="partbox col-3"></div>
           <div class="partbox col-3"></div>
           <div class="partbox col-3"></div>
           <div class="partbox col-3"></div>
         </div>
-
+        <!-- 파트 1개 -->
         <div class="group-part group-part-02">
           <div class="partbox col-12"></div>
         </div>
-        <div class="group-part group-part-03"></div>
-        <div class="group-part group-part-04"></div>
-        <div class="group-part group-part-05"></div>
+
+        <!-- 파트 8개 -->
+        <div class="group-part group-part-03">
+          <h2>뉴스모아보기</h2>
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+        </div>
+        <div class="group-part group-part-04">
+          <h2></h2>
+          <div class="partbox col-2"></div>
+          <div class="partbox col-2"></div>
+          <div class="partbox col-2"></div>
+          <div class="partbox col-2"></div>
+          <div class="partbox col-2"></div>
+          <div class="partbox col-2"></div>
+        </div>
+        <div class="group-part group-part-05">
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+          <div class="partbox col-3"></div>
+        </div>
       </main>
     </div>
     <!-- 하단영역 -->
     <div id="footer">
       <footer class="footer inbox">
-        <!-- 파트 3개 -->
-        <div class="partbox col-2"></div>
-        <div class="partbox col-8"></div>
-        <div class="partbox col-2"></div>
+        <div class="group-part-06">
+          <!-- 파트 3개 -->
+          <div class="partbox col-6"></div>
+          <div class="partbox col-6"></div>
+        </div>
+        <div class="group-part-07">
+          <div class="partbox col-2"></div>
+          <div class="partbox col-4"></div>
+          <div class="partbox col-2"></div>
+          <div class="partbox col-4"></div>
+        </div>
       </footer>
     </div>
   </body>
