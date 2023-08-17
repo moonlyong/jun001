@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+@import url(./robot.css);
+
+/* 로봇설명박스 */
+.box-text{
+    /* 로봇보다 위 - 포지션 있어야 위에옴 */
+    position: relative;
+
+    /* 최대크기 800px */
+    max-width: 800px;
+    /* 박스중앙 : 마영오 */
+    margin: 0 auto;
+    /* 하단마진 200px */
+    margin-bottom: 200px;
+    /* 반투명 검정배경 */
+    background-color: rgba(0, 0, 0, 0.336);
+    /* 글자색 흰색 */
+    color: white;
+    /* 글자그림자  */
+    text-shadow: 0px 0px 5px rgb(221, 255, 98);
+    /* 패딩 : 15px 30px */
+    padding: 15px 30px;
+    /* 경계선 : 3px solid #fff */
+    border: 3px solid #fff;
+    /* 둥근모서리 : 20px */
+    border-radius: 20px;
+    /* 박스 그림자를 이용한 글로우 효과 : 내부,외부 */
+    box-shadow: inset 0px 0px 20px rgb(98, 127, 255),inset 0px 0px 50px 10px rgb(255, 197, 238);
+
+}
+
+.ear, .body>div, .body>div>span, .head{
+    box-shadow: 0 0 10px aqua;
+}
+/* 제목 */
+.box-text h2{
+    /* 글자 : 35px 'Chakra Petch' */
+    font: 2.18rem 'Chakra Petch';
+    /* 글자색 라임 */
+    color: lime;
+    /* 글자 중앙 정렬 */
+    text-align: center;
+    /* 배경색 흰색 반투명 */
+    background-color: rgba(255, 255, 255, 0.336);
+    /* 둥근 모서리 20px */
+    border-radius: 20px;
+    /* 스티키 포지션 */
+    position: sticky;
+    top: 15px;
+
+}
+
+/* 출처 */
+.box-text small{
+    /*글자체 : 'Chakra Petch' */
+    font-family: 'Chakra Petch';
+    /* 글자크기 : 12px -> rem */
+    font-size: 0.8rem;
+    /* 줄간격 : 3배*/
+    line-height: 3;
+    /* 글자색 노란색 */
+    color: #ff0;
+    /* 블록변경 */
+    display: block;
+    /* 글자중앙 */
+    text-align: center;
+}
+
+/* 내용단락 */
+.desc{
+    /* 글자체 : 'Barlow' */
+    font-family: 'Barlow';
+    /* 글자크기 : 17px -> rem */
+    font-size: 1.06rem;
+    /* 줄간격 : 1.8배 */
+    line-height: 1.8;
+    /* 자간 1px  */
+    letter-spacing: 1px;
+    /* 단어 간격 : 2px */
+    word-spacing: 2px;
+    /* 다단 설정 */
+    /* 
+        [다단설정하기]
+        -다중열속성
+        -> column count : 다중열개수
+        -> column gap : 다중열간격
+        -> column rule : 다중열구분선
+
+     */
+     /* 다중열개수 */
+     column-count: 3;
+     /* 다중열 간격 10px */
+     column-gap: 10px;
+     /* 다중열 구분선 */
+     column-rule: 2px solid #ff0;
+     /* 양쪽정렬 : taj */
+     text-align: justify;
+     /* 단어단위로 줄바꿈 하므로 
+     양쪽정렬시 영어는 단어깨기를 해줘야함 
+     2바이트는 안깨도 됨*/
+     /* 단어 깨기 */
+     word-break: break-all;
+     
+}
+/* 설명문단 첫글자 가상요소로 디자인 변경 */
+.desc::first-letter{
+    font-size: 1.5rem;
+}
+

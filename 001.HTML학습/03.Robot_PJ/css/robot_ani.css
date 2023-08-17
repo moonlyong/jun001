@@ -81,19 +81,19 @@
 /* 로봇 위치 /크기변경 애니 */
 @keyframes robot-ani {
   to {
-    transform: scale(1) translate(0, 0);
+    transform: scale(.6) translate(0, 0);
   }
 }
 
 /* 로봇애니 호출 */
 .box-robot {
   animation: robot-ani 5s linear 3s forwards,
-    robot-ani2 5s cubic-bezier(1, -0.01, 0.4, 1) 3s;
+    robot-ani2 5s cubic-bezier(1, -0.01, 0.4, 1) 3s forwards;
 }
 
 @keyframes robot-ani2 {
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(.6);
   }
 }
 
