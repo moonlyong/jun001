@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS심화 - Sprites, IR</title>
+        <style>
+            .icons {
+                /* 플렉스박스 */
+                display: flex;
 
-<head>
-    <meta charset="utf-8">
-    <title>CSS심화 - Sprites, IR</title>
-    <style>
-        .icons {
-            /* 플렉스박스 */
-            display: flex;
+                /* 3無 */
+                margin: 0;
+                padding: 0;
+                list-style: none;
 
-            /* 3無 */
-            margin: 0;
-            padding: 0;
-            list-style: none;
+                outline: 1px solid red;
+            }
 
+            .icons li {
+                width: 128px;
+                height: 128px;
+                background: url(./images/icons.png) no-repeat;
 
-            outline: 1px solid red;
-        }
+                outline: 1px dotted blue;
+            }
 
-        .icons li {
-            width: 128px;
-            height: 128px;
-            background: url(./images/icons.png) no-repeat;
+            /* 트위터 */
+            .icons li:nth-child(1) {
+                background-position: 0 0;
+            }
+            /* 트위터 오버시 */
+            .icons li:nth-child(1):hover {
+                background-position: 0 -128px;
+            }
+            /* 인스타 */
+            .icons li:nth-child(2) {
+                background-position: -128px 0;
+            }
+            /* 인스타 오버시 */
+            .icons li:nth-child(2):hover {
+                background-position: -128px -128px;
+            }
+            /* 페북 */
+            .icons li:nth-child(3) {
+                background-position: -256px 0;
+            }
+            /* 페북 오버시 */
+            .icons li:nth-child(3):hover {
+                background-position: -256px -128px;
+            }
 
-            outline: 1px dotted blue;
-        }
+            /* a요소 확장하기 */
+            .icons a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
 
-        /* 트위터 */
-        .icons li:nth-child(1){
-        }
-        /* 트위터 오버시 */
-        .icons li:nth-child(1):hover {
-        }
-        /* 인스타 */
-        .icons li:nth-child(2){
-        }
-        /* 인스타 오버시 */
-        .icons li:nth-child(2):hover{
-        }
-        /* 페북 */
-        .icons li:nth-child(3){
-        }
-        /* 페북 오버시 */
-        .icons li:nth-child(3):hover{
-        }
-
-        /* a요소 확장하기 */
-        .icons a{
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-
-
-
-        /*************************************************
+            /*************************************************
 
                 [ 스프라이츠(Sprites) 기법 ]
 
@@ -96,8 +98,7 @@
                 
             **********************************************/
 
-
-        /* ************************************************
+            /* ************************************************
             
                 [ 이미지를 사용할때 웹접근성 이슈 ]
                 
@@ -131,59 +132,74 @@
             
             ***********************************************/
 
-        /* IR 숨기기 class */
-        .ir{
-            display: block;
-            width: 0;
-            height: 0;
-            overflow: hidden;
-        }
-        
+            /* IR 숨기기 class */
+            .ir {
+                display: block;
+                width: 0;
+                height: 0;
+                overflow: hidden;
+            }
 
+            /* 스프라이츠 연습 */
 
-        /* 스프라이츠 연습 */
-        
-        
-    </style>
-</head>
+            .sp {
+                border: 1px solid #000;
+                background: url(./images/sp_main_dba1af.png) no-repeat;
+                background-size: 457px;
+            }
+            .sp1 {
+                width: 84px;
+                height: 28px;
+                background-position: -195px -266px;
+            }
+            .sp2 {
+                width: 84px;
+                height: 28px;
+                background-position: -122px -385px;
+            }
+            .sp3 {
+                width: 65px;
+                height: 20px;
+                background-position: -197px -324px;
+            }
+            .sp4 {
+                width: 102px;
+                height: 40px;
+                background-position: -273px -164px;
+            }
+        </style>
+    </head>
 
-<body>
-    <ul class="icons">
-        <li>
-            <a href="#">
-            </a>
-        </li>
-        <li>
-            <a href="#">
-            </a>
-        </li>
-        <li>
-            <a href="#">
-            </a>
+    <body>
+        <ul class="icons">
+            <li>
+                <a href="#"> </a>
+            </li>
+            <li>
+                <a href="#"> </a>
+            </li>
+            <li>
+                <a href="#"> </a>
+            </li>
+        </ul>
 
-        </li>
-    </ul>
-
-    <!-- 스프라이츠 연습 -->
-    <h2>오디오클립</h2>
-    <div class="sp sp1">
-        <span class="ir">네이버로고 어쩔티비 저쩔티비</span>
-    </div>
-    <br>
-    <h2>네이버쇼핑</h2>
-    <div class="sp sp2">
-        <span class="ir">오디오클립 하하하</span>
-    </div>
-    <h2>쥬니어네이버</h2>
-    <div class="sp sp3">
-        <span class="ir">쥬니어네이버 바로가기</span>
-    </div>
-    <h2>추천크리에이터</h2>
-    <div class="sp sp4">
-        <span class="ir">추천크리에이터 바로가기</span>
-    </div>
-
-
-</body>
-
+        <!-- 스프라이츠 연습 -->
+        <h2>오디오클립</h2>
+        <div class="sp sp1">
+            <span class="ir">네이버로고 어쩔티비 저쩔티비</span>
+        </div>
+        <br />
+        <h2>네이버쇼핑</h2>
+        <div class="sp sp2">
+            <span class="ir">오디오클립 하하하</span>
+        </div>
+        <h2>쥬니어네이버</h2>
+        <div class="sp sp3">
+            <span class="ir">쥬니어네이버 바로가기</span>
+        </div>
+        <h2>추천크리에이터</h2>
+        <div class="sp sp4">
+            <span class="ir">추천크리에이터 바로가기</span>
+        </div>
+    </body>
 </html>

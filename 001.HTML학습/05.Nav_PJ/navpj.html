@@ -72,6 +72,14 @@
                 padding: 0 min(32px, 1.5vw);
                 line-height: 80px;
             }
+            /* 가상요소로 밑줄만들기 */
+            .gnb a::after { 
+                content: '';
+                display: block;
+                width: 100%;
+                height: 4px;
+                background-color: red;
+            }
 
 
             /* 서브메뉴 
