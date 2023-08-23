@@ -4,3 +4,15 @@
 @import url(./reset.css);
 @import url(./core.css);
 /* 회사 로고 */
+header{
+    height: 960px;
+    background: url(./이미지/메인w.jpg) no-repeat center/100%
+}
+h1 {
+    width: 10vw;
+    height: max(5vw,52px);
+    background: url(./이미지/로고이미지/JTBC로고.png) no-repeat center/120%;
+}
+.tving-logo{background: url(./이미지/로고이미지/티빙pc.png) center/100%;width: 100px;height: 100px;}
+.netflix-logo{background: url(./이미지/로고이미지/넷플릭스pc.png) center/100%;width: 100px;height: 100px;}
+.disney-logo{background: url(./이미지/로고이미지/디즈니.png) center/100%;width: 100px;height: 100px;}
