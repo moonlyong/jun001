@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body * {
-    border: 1px dotted #000;
+    outline: 1px dotted #c8ff00;
 }
 body {
     background: #000;
@@ -22,9 +22,14 @@ body {
     height: 300px;
     background-color: aqua;
 }
+
+
+/* 여기서부터 */
 .top-nav > ul > li,
 .top-nav,.linklogo-bx li{
     float: left;
+    display: flex;
+    flex-direction: row-reverse;
 }
 .top-nav a {
     color: #fff;
