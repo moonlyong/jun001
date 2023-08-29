@@ -8,3 +8,79 @@
     font-family: 'Monoton', cursive;
     font-family: 'Single Day', cursive;
 */
+/* CSS불러오기 */
+@import url(./reset.css);
+/* 전체배경넣기 -가상요소로 배경고정 */
+/* 이유 ios에서 배경 fixed 미지원 */
+body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: url(../ab_img/space.jpg) no-repeat center/cover;
+}
+html{
+    /* rem단위 */
+    font-size: 10px;
+}
+body{
+    color: aliceblue;
+}
+/* 공사중 */
+body * {
+    outline: 1px dashed yellow;
+}
+
+/* 공통클래스 */
+/* 페이지클래스 */
+.page{
+    position: relative;
+    height: 100vh;
+}
+.tit{
+    text-align: center;
+    font-size: 4rem;
+}
+
+/* 개별요소 디자인 */
+.avengers-box{
+position: absolute;
+width: 300px;
+height: 400px;
+top: calc(50% - 400px/2);
+left: calc(50% - 300px/2);
+background: url(../ab_img/ab0.jpg)no-repeat center/cover;
+border-radius: 50%;
+box-shadow: 
+0 0 50px 10px #ff9046,
+inset 0 0 30px #ff2f2f;
+}
+.txt{
+
+}
+.hero{
+position: absolute;
+width: 150px;
+height: 150px;
+top: calc(50% - 150px/2);
+left: calc(50% - 150px/2);
+}
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 
+        [ object-fit 속성 ]
+        -> 이미지나 동영상을 박스에 맞출때
+        옵션을 설정해 주는 속성
+        1. fill : 설정값에 강제적용(기본값)
+        2. contain : 박스에 모두 보임
+        3. cover : 박스를 비율에 맞게 채움
+            -> 빈틈없이 채우며 배경cover와
+            유사한 효과를 준다! 
+    */
+    border-radius: 50%;
+}
