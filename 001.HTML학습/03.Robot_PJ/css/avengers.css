@@ -12,8 +12,8 @@
 @import url(./reset.css);
 /* 전체배경넣기 -가상요소로 배경고정 */
 /* 이유 ios에서 배경 fixed 미지원 */
-body::before{
-    content: '';
+body::before {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
@@ -22,51 +22,84 @@ body::before{
     z-index: -1;
     background: url(../ab_img/space.jpg) no-repeat center/cover;
 }
-html{
+html {
     /* rem단위 */
     font-size: 10px;
 }
-body{
+body {
     color: aliceblue;
 }
 /* 공사중 */
 body * {
-    outline: 1px dashed yellow;
+    /* outline: 1px dashed yellow; */
 }
 
 /* 공통클래스 */
 /* 페이지클래스 */
-.page{
+.page {
     position: relative;
     height: 100vh;
 }
-.tit{
+.tit {
     text-align: center;
     font-size: 4rem;
 }
 
 /* 개별요소 디자인 */
-.avengers-box{
-position: absolute;
-width: 300px;
-height: 400px;
-top: calc(50% - 400px/2);
-left: calc(50% - 300px/2);
-background: url(../ab_img/ab0.jpg)no-repeat center/cover;
-border-radius: 50%;
-box-shadow: 
-0 0 50px 10px #ff9046,
-inset 0 0 30px #ff2f2f;
+.avengers-box {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top: calc(50% - 400px / 2);
+    left: calc(50% - 300px / 2);
+    background: url(../ab_img/ab0.jpg) no-repeat center/cover;
+    border-radius: 50%;
+    box-shadow: 0 0 50px 10px #ff9046, inset 0 0 30px #ff2f2f;
 }
-.txt{
+/* 어벤저스 설명박스 */
+.txt {
+    position: absolute;
+    top: 50%;
+    right: 110%;
+    transform: translateY(-25%) scale(1,0);
+    /* transform: translateY(-50%); */
+    font-size: 1.8rem;
+    width: 320px;
+    line-height: 1.7;
+    background-color: #ffffff30;
+    border-radius: 15px;
+    text-shadow: 1px 1px 1px #000;
 
+    /* 숨기기 */
+     overflow: hidden;
+     /* 트랜지션 */
+     transition: .5s ease-in-out;
 }
-.hero{
-position: absolute;
-width: 150px;
-height: 150px;
-top: calc(50% - 150px/2);
-left: calc(50% - 150px/2);
+
+/* 상위박스 마우스 오버시 */
+.hero:hover .txt{
+    transform: translateY(-50%);
+}
+/* 패딩과 보더는 하위박스에 주고 완전히 숨기기 */
+.txt>div{
+    padding: 2rem;
+}
+/* 설명박스 위치 오른쪽 클래스 */
+.txt.right{
+    right: -250%;
+}
+/* 캐릭터 타이틀 */
+.txt h3{
+    font-size: 2.5rem;
+    text-align: center;
+    color: skyblue;
+}
+.hero {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: calc(50% - 150px / 2);
+    left: calc(50% - 150px / 2);
 }
 .hero img {
     width: 100%;
@@ -84,3 +117,25 @@ left: calc(50% - 150px/2);
     */
     border-radius: 50%;
 }
+/* 히어로 순서별 위치값 세팅 */
+.hero:nth-child(1) {
+    /* 개별위치 이동값 */
+    transform: translate(-170%, -100%);
+}
+.hero:nth-child(2) {
+    /* 개별위치 이동값 */
+    transform: translate(-170%, 100%);
+}
+.hero:nth-child(3) {
+    /* 개별위치 이동값 */
+    transform: translate(0%, 220%);
+}
+.hero:nth-child(4) {
+    /* 개별위치 이동값 */
+    transform: translate(170%, -100%);
+}
+.hero:nth-child(5) {
+    /* 개별위치 이동값 */
+    transform: translate(170%, 100%);
+}
+
