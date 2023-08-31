@@ -5,11 +5,11 @@
 @import url(./common.css);
 @import url(./reset.css);
 
- /* 공사중표시 */
- body *{
-    outline: 2px dashed #ccc;
+/* 공사중표시 */
+body * {
+    /* outline: 2px dashed #ccc; */
 }
-body>div>*{
+body > div > * {
     outline-color: red;
 }
 
@@ -18,31 +18,29 @@ body>div>*{
 파트박스가 늘어날 경우 높이값에 제한을 받게됨!
 확장형은 반드시 파트박스에 높이값을 설정한다! */
 
-
-
 /************* 2. 캐릭터 소개 *************/
-#banner{
-    background-color: lightgreen;
+#banner {
+    background: url(../images/bg_mainvisual2.jpg) no-repeat center/auto 100%;
 }
-.banner .partbox{
+.banner .partbox {
     height: 530px;
 }
 
 /* 도깨비 메뉴박스 */
-#dokebi-menu{
+#dokebi-menu {
     /* 상단에 걸림 스티키~ */
     position: sticky;
     top: 0;
     background-color: #fff;
 }
 /* 메뉴 정렬 */
-.dokebi-menu ul{
+.dokebi-menu ul {
     /* 플렉스박스 */
     display: flex;
     padding: 12px 0;
 }
 /* 도깨비메뉴 a */
-.dokebi-menu ul>li>a{
+.dokebi-menu ul > li > a {
     color: #999;
     font-size: 1.8rem;
     display: block;
@@ -51,66 +49,130 @@ body>div>*{
     white-space: nowrap;
 }
 /* 상위 li 오버시 a */
-.dokebi-menu ul>li:hover>a{
+.dokebi-menu ul > li:hover > a {
     color: #222;
 }
 /* 하위메뉴가 있는 li만 하위표시 */
-.dokebi-menu ul>li.be-sub>a::after{
-    content: 'V';
+.dokebi-menu ul > li.be-sub > a::after {
+    content: "V";
     display: inline-block;
-    transform: scale(.5,.3);
+    transform: scale(0.5, 0.3);
     margin-left: 3px;
 }
 /* 현재 선택된 메뉴 li.on 클래스 */
-.dokebi-menu ul>li.on>a{    
+.dokebi-menu ul > li.on > a {
     background-color: red;
     color: #fff;
     border-radius: 30px;
 }
 /* 도꺠비 서브메뉴 */
-.dokebi-sub-menu{
+.dokebi-sub-menu {
     position: absolute;
     border: 1px solid red;
     background-color: #fff;
     width: 180px;
-    border-radius: 30px;
+    border-radius: 20px;
     /* 처음에 숨김 */
     display: none;
 }
 /* 오버시 보이기 */
 
-.dokebi-menu ul>li:hover>.dokebi-sub-menu{
+.dokebi-menu ul > li:hover > .dokebi-sub-menu {
     display: block;
 }
 /* 서브메뉴 a */
 
-.dokebi-sub-menu a{
+.dokebi-sub-menu a {
     display: block;
     padding: 10px 15px;
     font-size: 1.8rem;
 }
+
+.cat-area{
+    position: relative;
+    aspect-ratio: 2/1;
+}
+.cat-box{
+    position: absolute;
+    /* overflow: hidden; */
+    bottom: 5%;
+    width: 100%;
+    /* transform: translateY(200px); */
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cat-box article{
+    position: relative;
+    width: calc(95%/4);
+    aspect-ratio: 2/1.2;
+    outline: 2px dashed blue;
+}
+/* 캐릭터 컨텐츠 박스 */
+.cat-content{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+}
+.cat-content .part{
+    flex: 1;
+}
+/* 캐릭터 이미지 */
+.img-box>img{
+    width: 100%;
+}
+/* 설명박스 */
+.img-box figcaption{
+    text-align: center;
+}
+.img-box figcaption img{
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    width: 30%;
+    /* text-align: center;
+    margin-top: -20%; */
+}
+.img-box figcaption img:last-child{
+    display: none;
+}
+/* 오버시 보이기 */
+.cat-box article:hover .img-box figcaption img:last-child{
+    display: inline;
+    transform: scale(1.2);
+}
+.cat-box article:hover .img-box figcaption img:first-child{
+    display: none;
+}
+
+
+
 /************* 3. 메인영역 : .group-part *************/
-#main{
+#main {
     background-color: lightpink;
 }
 
 /* 방송편성 */
-.main .group-part-01 .partbox{
+.main .group-part-01 .partbox {
     height: 455px;
 }
 /* 미리보기 */
-.main .group-part-02 .partbox{
+.main .group-part-02 .partbox {
     height: 298px;
 }
 /* 현장포토파트 */
-.main .group-part-03 .partbox{
+.main .group-part-03 .partbox {
     height: 300px;
 }
 /* 대표이미지 */
-.main .group-part-04 .partbox{
+.main .group-part-04 .partbox {
     height: 542px;
 }
 /* 최신동영상 */
-.main .group-part-05 .partbox{
+.main .group-part-05 .partbox {
     height: 376px;
 }
