@@ -1,0 +1,187 @@
+@charset "utf-8";
+
+/* 큐브 애니메이션 CSS - cube.css */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: linear-gradient(to bottom, #a1f4e0, #ef95fb);
+    height: 100vh;
+}
+/* 변수세팅 */
+:root {
+    --box-w: 150px;
+    --box-h: 200px;
+
+    --z-sz:20vw
+}
+/* 큐브를 싸고있는대상 */
+.wrap{
+    /* 픽스 */
+    position: fixed;
+    /* 스크롤바 */
+    overflow: auto;
+    /* 화면크기 */
+    width: 100vw;
+    height: 100vh;
+    /* 원근 */
+    perspective: 60vh;
+}
+.content{
+    position: relative;
+    transform-style: preserve-3d;
+    height: 300vh;
+}
+.cube {
+    position: absolute;
+    width: var(--box-w);
+    height: var(--box-h);
+    /* outline: 1px dashed red; */
+    top: calc(50vh - var(--box-h) / 2);
+    left: calc(50vw - var(--box-w) / 2);
+    transform-style: preserve-3d;
+    /* 입체로 설정하기
+    -입체로 설정할 요소의 부모박스에
+    아래와 같이 설정해준다(부모요소)
+    transform-style:preserve-3d
+    기본값은 flat : 2D
+    */
+    /* 입체를 보이게 회전 */
+    transform: rotateY(0deg) rotateX(0deg);
+}
+.cube2 {
+    top: calc(150vh - var(--box-h) / 2);
+    left: calc(50vw - var(--box-w) / 2);
+    
+    /* 입체로 설정하기
+    -입체로 설정할 요소의 부모박스에
+    아래와 같이 설정해준다(부모요소)
+    transform-style:preserve-3d
+    기본값은 flat : 2D
+    */
+}
+/* 큐브각면 공통 */
+.cube span {
+    position: absolute;
+    /* 앱솔 자동 블록 */
+    width: 100%;
+    height: 100%;
+    /* 투명도 */
+    opacity: 1;
+    outline: 1px solid rgb(38, 0, 255);
+}
+
+
+
+.cube span:nth-child(1) {
+    background: url(../images/moving/pt1.jpg) no-repeat center/cover;
+    transform: translateZ(var(--box-h));
+}
+.cube span:nth-child(2) {
+    background: url(../images/moving/pt2.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg/8)) translateZ(var(--box-h));
+}
+.cube span:nth-child(3) {
+    background: url(../images/moving/pt3.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*2/8)) translateZ(var(--box-h));
+}
+.cube span:nth-child(4) {
+    background: url(../images/moving/pt4.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*3/8)) translateZ(var(--box-h));
+}
+.cube span:nth-child(5) {
+    background: url(../images/moving/pt5.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*4/8)) translateZ(var(--box-h));
+}
+.cube span:nth-child(6) {
+    background: url(../images/moving/pt6.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*5/8)) translateZ(var(--box-h));
+}
+.cube span:nth-child(7) {
+    background: url(../images/moving/pt7.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*6/8)) translateZ(var(--box-h));
+}
+.cube span:nth-child(8) {
+    background: url(../images/moving/pt8.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*7/8)) translateZ(var(--box-h));
+}
+.cube2 span:nth-child(1) {
+    background: url(../images/moving/mv1.jpg) no-repeat center/cover;
+    transform: translateZ(var(--z-sz));
+}
+.cube2 span:nth-child(2) {
+    background: url(../images/moving/mv2.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg/9)) translateZ(var(--z-sz));
+}
+.cube2 span:nth-child(3) {
+    background: url(../images/moving/mv3.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*2/9)) translateZ(var(--z-sz));
+}
+.cube2 span:nth-child(4) {
+    background: url(../images/moving/mv4.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*3/9)) translateZ(var(--z-sz));
+}
+.cube2 span:nth-child(5) {
+    background: url(../images/moving/mv5.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*4/9)) translateZ(var(--z-sz));
+}
+.cube2 span:nth-child(6) {
+    background: url(../images/moving/mv6.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*5/9)) translateZ(var(--z-sz));
+}
+.cube2 span:nth-child(7) {
+    background: url(../images/moving/mv7.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*6/9)) translateZ(var(--z-sz));
+}
+.cube2 span:nth-child(8) {
+    background: url(../images/moving/mv8.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*7/9)) translateZ(var(--z-sz));
+}
+.cube2 span:nth-child(9) {
+    background: url(../images/moving/mv9.jpg) no-repeat center/cover;
+    transform: rotateY(calc(360deg*8/9)) translateZ(var(--z-sz));
+}
+/* 큐브회전 클래스 */
+.rotate-cube{
+    /* 애니메이션 */
+    animation: cube-ani 10s linear infinite ;
+    /* animation-play-state: paused; */
+}
+/* 작동상태 */
+.rotate-cube:hover{
+    animation-play-state: paused;
+}
+/* 키프레임 */
+@keyframes cube-ani{
+    to{
+        transform: rotateY(-360deg);
+        /* transform: rotateX(370deg) rotateY(390deg) rotateZ(360deg); */
+        /* 
+        x축 양의 방향으로 10도에서 출발
+        양의 방향 360도+10도=370도
+        음의 방향 -360도+10도=-350도
+        ____________________________
+        
+        y축 양의 방향으로 30도에서 출발
+        양의 방향 360도+30도=390도
+        음의 방향 -360도+30도=-330도
+        */
+    }
+    
+}
+/* 작동버튼 */
+/* .btngo{
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    border-radius: 10px; 
+    cursor: pointer;   
+    z-index: 1;
+}
+.btngo:hover{
+    background-color: lime;
+} */
