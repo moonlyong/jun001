@@ -1,0 +1,49 @@
+@charset "utf-8";
+html,body,h1,h2,h3,h4,ul,ol,dl,dt,figure,figcaption,p,section{
+    margin: 0;
+    padding: 0;
+}
+body * {
+    outline: 1px dashed red;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 40px;
+    font-style: bold;
+}
+.map-box{
+    position: relative;
+    /* height: 100%; */
+    display: flex;
+}
+.tit{
+    position: absolute;
+    color: aliceblue;
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 0 0 15px 0 ;
+}
+.go1-2{
+    position: absolute;
+    top: 0;
+    right: 450px;
+}
+.go1-2::after{
+    content: 'Map-2';
+    color: #fff;
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+}
+.world-map img{
+    position: relative;
+    width: 600px;
+}
+
+.btn{
+    position: absolute;
+    top: 0;right: 0;
+}
+
+
