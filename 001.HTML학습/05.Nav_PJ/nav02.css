@@ -156,5 +156,5 @@ body{
     position: relative;
     /* 비율적용박스 */
     aspect-ratio: 16/9;
-    background: url(../images/visual_img_gansam.jpg) no-repeat center/cover;
+    background: url(./images/visual_img_gansam.jpg) no-repeat center/cover;
 }

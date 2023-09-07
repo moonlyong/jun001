@@ -40,7 +40,10 @@ addEvt(window,"DOMContentLoaded", loadFn);
             li에 클래스 "on"주기(나머진 빼기->초기화!)
 
 *****************************************************/
-
+// 광클금지 - 0 허용 1 불허용
+let clickSts=0
+// 2. 슬라이드 이동시간 : 상수로 설정
+const TIME_SLIDE = 400
 /****************************************** 
     함수명: loadFn
     기능: 로딩 후 버튼 이벤트 및 기능구현
@@ -53,7 +56,7 @@ function loadFn() {
     const abtn = qsa('.abtn');
     // 변경 대상: #slide
     const slide = qs('#slide');
-
+    
 
     // 대상확인
     console.log('대상',abtn,slide);
@@ -63,6 +66,10 @@ function loadFn() {
 
     // 3. 함수만들기
     function goSlide(){
+        // 광클 금지
+        if(clickSts)return
+        clickSts=1
+        setTimeout(()=>clickSts=0,400)
         // 호출확인
         console.log('나야나!',this,
         this.classList.contains('ab2'));
@@ -81,7 +88,7 @@ function loadFn() {
             //1.대상이동하기
             slide.style.left = '-100%';
             //2.트랜지션주기
-            slide.style.transition = '.4s ease-in-out';
+            slide.style.transition = TIME_SLIDE+'ms ease-in-out';
             // 이동시간 후 맨앞li 잘라서 맨뒤로 이동하기
             // appendChild(요소)
             setTimeout(() => {
@@ -119,6 +126,25 @@ function loadFn() {
 
 
         } /////// else //////////////
+         // 4. 슬라이드 순번과 일치하는 블릿에 클래스 넣기
+        // 대상: .indic li -> indic변수
+        // 맨앞 슬라이드 li의 'data-seq' 값 읽어오기
+        // isRight값이 true이면 오른쪽버튼이고 순번은 [1]
+        // isRight값이 false이면 왼쪽버튼이고 순번은 [0]
+        let nowSeq = 
+        slide.querySelectorAll('li')[isRight?1:0]
+        .getAttribute('data-seq');
+
+        console.log('현재슬라이드 순번:',nowSeq);
+
+
+        
+        // 해당순번 블릿li에 클래스 on넣기
+        // 블릿전체순회시 해당순번에 on넣고 나머지는 on빼기
+        indic.forEach((ele,idx)=>{
+            if(idx==nowSeq) ele.classList.add('on');
+            else ele.classList.remove('on');
+        }); ///////// forEach ///////////
 
     } ////////// goSlide 함수 /////////
 
