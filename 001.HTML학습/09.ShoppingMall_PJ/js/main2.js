@@ -84,6 +84,7 @@ function loadFn() {
         if(clickSts) return;//나가!
         clickSts=1;//잠금!
         setTimeout(()=>clickSts=0,TIME_SLIDE);//해제!
+      
 
 
         // 호출확인
@@ -166,6 +167,7 @@ function loadFn() {
         }); ///////// forEach ///////////
 
     } ////////// goSlide 함수 /////////
+
 
 
 } //////////////// loadFn 함수 ///////////////
