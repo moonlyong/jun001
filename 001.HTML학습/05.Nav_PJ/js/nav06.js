@@ -58,7 +58,7 @@ const domFn = {
       let hcode = '';
   
       // 객체반복문 for in사용!
-      for(let x in obj){ // x - 속성명(2차메뉴)
+      for(let x in obj){
         hcode +=
         `
           <dl>
