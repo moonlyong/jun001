@@ -1,0 +1,31 @@
+
+.box-container {
+    display: flex;           /* Flexbox를 활성화 */
+    margin-bottom: 20px;     /* scrollbar-box와의 간격 조정 */
+    margin-left: 50px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    transition: transform 0.3s; /* 박스 이동 애니메이션 효과 */
+}
+.scrollbar-box {
+    width: 1000px;            /* 박스의 전체 너비 설정. 필요에 따라 조정 */
+    height: 20px;            /* 박스의 전체 높이 설정. 필요에 따라 조정 */
+    background-color: #eee; /* 스크롤 트랙의 배경색 */
+    border-radius: 10px;    /* 둥근 모서리 */
+    position: relative;
+    margin: 50px;            /* 페이지 중앙에 위치시키기 위한 마진 */
+}
+
+.scroll-thumb {
+    width: 100px;            /* 스크롤 썸네일의 너비 설정. 필요에 따라 조정 */
+    height: 16px;            /* 스크롤 썸네일의 높이 설정. 필요에 따라 조정 */
+    background-color: #333; /* 스크롤 썸네일의 배경색 */
+    border-radius: 8px;     /* 둥근 모서리 */
+    position: absolute;
+    top: 2px;                /* 스크롤 썸네일의 상단 간격 */
+    left: 10px;              /* 스크롤 썸네일의 좌측 위치. 필요에 따라 조정 */
+}
