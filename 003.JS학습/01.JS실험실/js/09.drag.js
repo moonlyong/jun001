@@ -70,8 +70,20 @@ function goDrag(ele) {
             // 1. 드래그 상태에서 움직일때 위치값 mvx,mvy
             mvx = event.pageX;
             mvy = event.pageY;
+            // 2. 움직일때 위치값-처음위치값 : rx ry
+            rx = mvx - fx
+            ry = mvy - fy;
+            // 순수하게 움직인 거리
+            // 3. x,y 움직인 위치값을 타겟 요소에 적용
+            // 대상: 전달된 드래그요소 ->ele변수
+             ele.style.left = (rx+lx)+'px'
+             ele.style.top = (ry+ly)+'px'
+            //  4. z-index 값을 드래그 대상만 높여주고 나머지는 지움
+            dtg.forEach(ele=>ele.style.zIndex=0)
+            ele.style.zIndex = 1;
             // 확인
             console.log(`mvx: ${mvx}mvy: ${mvy}`);
+            console.log(`rx: ${rx}ry: ${ry}`);
         }
     }; ////dmove 함수
 
@@ -79,7 +91,7 @@ function goDrag(ele) {
     const firstPoint = () => {
         fx = event.pageX;
         fy = event.pageY;
-        console.log(`fx: ${fx}fy: ${fy}`);
+        // console.log(`fx: ${fx}fy: ${fy}`);
     };
     // (5) 마지막 포인트 세팅함수 lx ly
     const lastPoint = () => {
