@@ -19,3 +19,4 @@ export default {
   // 옵셋탑값 반환함수
   getOT: (ele) => ele.offsetTop,
 }; /////// domFn 객체 /////////////
+

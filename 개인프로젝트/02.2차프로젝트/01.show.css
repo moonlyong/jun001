@@ -1,0 +1,79 @@
+@charset 'utf-8';
+
+#root1{
+    width: 100vw;
+    height: 10vh;
+    /* background: #ff9e9e; */
+}
+#root2{
+    width: 100vw;
+    height: 60vh;
+    position: relative;
+    /* background: #ff9e9e; */
+}
+#root3{
+    width: 100vw;
+    height: 30vh;
+    /* background: #ff9e9e; */
+}
+.top-logo{
+    font-size: 2.8rem;
+    text-align: center;
+    line-height: 1;
+    
+}
+.top-logo img{
+    height: 7vh;
+    position: relative;
+    bottom: -10px;
+    right: 10px;
+}
+
+
+#icon-box{
+    width: 60%;
+    position: absolute;
+    left: 15vw;
+}
+#icon-box>ul{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 20vh;
+    background: #bebebe1d;
+    outline: 1px solid #aaa;
+    border-radius: 10px;
+    flex-basis: calc(100%/4);
+}
+#icon span:first-child{
+    font-size: 1.8rem;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+#icon span:nth-child(2){
+    font-size: 2rem;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+#icon p{
+    
+    font-size: 1rem;
+}
+.card-box{
+    background: url(./blankcard.png)no-repeat 100% 100%/cover
+     ;
+    width: 24vw;
+    height: 68vh;
+    outline: 1px solid #aaa;
+    position: absolute;
+    right: -10%;
+    top: 6vh;
+}
