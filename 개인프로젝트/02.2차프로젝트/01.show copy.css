@@ -16,6 +16,11 @@
     height: 30vh;
     /* background: #ff9e9e; */
 }
+.bottom-area{
+    width: 100vw;
+    height: 30vh;
+    /* background: #ff9e9e; */
+}
 .top-logo{
     font-size: 2.8rem;
     text-align: center;
@@ -68,13 +73,18 @@
     
     font-size: 1rem;
 }
-
+/* .card-box{
+    position: absolute;
+    left: 90%;
+    top: 6vh;
+} */
 .card-box>img{
-    position: relative;
     width: 24vw;
     height: 68vh;
+    display: none;
+    position: relative;
 }
-#root3>h2{
+.bottom-area>h2{
     text-align: center;
     line-height: 5
     ;

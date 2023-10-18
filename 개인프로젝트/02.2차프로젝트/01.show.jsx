@@ -2,87 +2,127 @@ const SvIcon = [
     {
         tit: "교통",
         imoz: "🚍",
-        txt:"택시 버스 지하철 등 대중교통",
+        txt: "택시 버스 지하철 등 대중교통",
     },
     {
         tit: "주유",
         imoz: "⛽",
-        txt:"주유소 전기차충전소 관련 ",
+        txt: "주유소 전기차충전소 관련 ",
     },
     {
         tit: "통신",
         imoz: "📱",
-        txt:"SKT KT LGU+ 요금할인",
+        txt: "SKT KT LGU+ 요금할인",
     },
     {
         tit: "마트",
         imoz: "🛒",
-        txt:"대형마트 편의점 전통시장",
+        txt: "대형마트 편의점 전통시장",
     },
     {
         tit: "쇼핑",
         imoz: "🎁",
-        txt:"면세점 백화점 홈쇼핑",
+        txt: "면세점 백화점 홈쇼핑",
     },
     {
         tit: "푸드",
         imoz: "🍛",
-        txt:"일반음식점 배달앱 패스트푸드 ",
+        txt: "일반음식점 배달앱 패스트푸드 ",
     },
     {
         tit: "카페",
         imoz: "☕️",
-        txt:"카페 베이커리",
+        txt: "카페 베이커리",
     },
     {
         tit: "의료",
         imoz: "🏥",
-        txt:"병원 약국",
+        txt: "병원 약국",
     },
     {
         tit: "자동차",
         imoz: "🚘",
-        txt:"보험 정비 하이패스",
+        txt: "보험 정비 하이패스",
     },
     {
         tit: "영화",
         imoz: "🎬",
-        txt:"공연 전시 도서 영화",
+        txt: "공연 전시 도서 영화",
     },
     {
         tit: "항공",
         imoz: "✈️",
-        txt:"각종 항공사 항공마일리지",
+        txt: "각종 항공사 항공마일리지",
     },
     {
         tit: "해외",
         imoz: "🌎",
-        txt:"해외결제 환전수수료",
+        txt: "해외결제 환전수수료",
     },
 ];
 
+const getCard = () => {
+    let Card = document.querySelector(".card-box");
+    let CardImg = document.querySelector(".card-box img")
+    console.log(CardImg);
 
+    // ReactDOM.render(<MakeImg isrc="./blankcard.png" ialt="의문의카드" />, Card);
+
+    let IconBox = document.querySelector("#icon-box");
+    CardImg.style.cssText = `
+    display: block;
+    `;
+    IconBox.style.cssText = `
+    display: none;
+    `;
+
+    Card.style.cssText = `
+            position: absolute;
+            left: 90%;
+            top: 6vh;
+            width: 24vw;
+            height: 34vw;
+            transition: 2s;
+        `;
+    setTimeout(() => {
+        Card.style.cssText = `
+            position: absolute;
+            top: 0;
+            left:calc(50% - (24vw/2));
+            width: 24vw;
+            height: 34vw;
+            transform: rotate(720deg) scale(0.7);
+            transition: 2s, right 1s 2s;
+        `;
+    }, 500);
+    let bta = document.querySelector('.bottom-area')
+    setTimeout(() => {
+        bta.style.cssText = `
+        display:none;
+        `
+    })
+};
+
+// function MakeImg(props) {
+//     return <img src={props.isrc} alt={props.ialt} />;
+// }
 
 function TopArea(props) {
     return (
         <React.Fragment>
-        <h1 class="top-logo">
-            <img src="./MLM.png" alt="" />
-            MLM Card
-        </h1>
+            <h1 class="top-logo">
+                <img src="./MLM.png" alt="" />
+                MLM Card
+            </h1>
         </React.Fragment>
     );
 }
-ReactDOM.render(<TopArea />, document.querySelector("#root1"))
+ReactDOM.render(<TopArea />, document.querySelector("#root1"));
 function IconSet(props) {
     return (
         <li id="icon">
-            <span>
-                {props.tit}
-            </span>
-            <span>
-                 {props.imoz}
-            </span>
+            <span>{props.tit}</span>
+            <span>{props.imoz}</span>
             <p>{props.txt}</p>
         </li>
     );
@@ -94,25 +134,45 @@ function IconList(props) {
             <div id="icon-box">
                 <ul>
                     {SvIcon.map((x) => (
-                        <IconSet tit={x.tit} imoz={x.imoz} txt={x.txt}></IconSet>
+                        <IconSet
+                            tit={x.tit}
+                            imoz={x.imoz}
+                            txt={x.txt}
+                        ></IconSet>
                     ))}
                 </ul>
             </div>
-            <div className="card-box">
-                
-            </div>
+            <div class="card-box"><img src="./blankcard.png" alt="" /></div>
             {/* 담을박스 */}
         </React.Fragment>
     );
 }
 ReactDOM.render(<IconList />, document.querySelector("#root2"));
 
+function IconBox(props) {
+    return (
+        <React.Fragment>
+            <div className="bottom-area">
+            <h2>원하는 혜택들을 넣고 카드를 발급받으세요!</h2>
+            <div class="basket">
+                <button onClick={getCard}>발급</button>
+            </div>
+            </div>
+            {/* 담을박스 */}
+        </React.Fragment>
+    );
+}
+ReactDOM.render(<IconBox />, document.querySelector("#root3"));
 
 const dtg = document.querySelectorAll("#icon");
-console.log(dtg)
+let Card = document.querySelector(".card-box img");
+
 // 드래그 설정하기
-dtg.forEach(ele=>goDrag(ele))
-           
+dtg.forEach((ele) => goDrag(ele));
+// goDrag(CardBox);
+console.log(Card);
+goDrag(Card)
+
 function goDrag(ele) {
     //ele - 드래그 대상 요소
     // 2.변수세팅
@@ -136,26 +196,23 @@ function goDrag(ele) {
     const dFalse = () => (drag = false);
     // (3) 드래그 작동함수
     const dMove = () => {
-        console.log(drag);
+        // console.log(drag);
         // 드래스 상태일때만 실행
         if (drag) {
             // 1. 드래그 상태에서 움직일때 위치값 mvx,mvy
             mvx = event.pageX;
             mvy = event.pageY;
             // 2. 움직일때 위치값-처음위치값 : rx ry
-            rx = mvx - fx
+            rx = mvx - fx;
             ry = mvy - fy;
             // 순수하게 움직인 거리
             // 3. x,y 움직인 위치값을 타겟 요소에 적용
             // 대상: 전달된 드래그요소 ->ele변수
-             ele.style.left = (rx+lx)+'px'
-             ele.style.top = (ry+ly)+'px'
-            //  4. z-index 값을 드래그 대상만 높여주고 나머지는 지움
-            dtg.forEach(ele=>ele.style.zIndex=0)
-            ele.style.zIndex = 1;
-            // 확인
-            console.log(`mvx: ${mvx}mvy: ${mvy}`);
-            console.log(`rx: ${rx}ry: ${ry}`);
+            ele.style.left = rx + lx + "px";
+            ele.style.top = ry + ly + "px";
+
+            // console.log(`mvx: ${mvx}mvy: ${mvy}`);
+            // console.log(`rx: ${rx}ry: ${ry}`);
         }
     }; ////dmove 함수
 
@@ -182,9 +239,8 @@ function goDrag(ele) {
         lastPoint();
     });
     // (3) 마우스 움직일때
-    ele.addEventListener("mousemove", dMove)
+    ele.addEventListener("mousemove", dMove);
     // (4) 마우스 벗어날때 : 드래그 상태 false 처리 함수 호출
-    ele.addEventListener("mouseleave", dFalse)
-}
-
+    ele.addEventListener("mouseleave", dFalse);
+} //////////드래그 이벤트//////////
 

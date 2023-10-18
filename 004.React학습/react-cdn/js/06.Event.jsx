@@ -75,8 +75,8 @@ function EventShow() {
         let lampImg = lamp.querySelector('img');
         lampImg.style.cssText = `
             position: absolute;
-            top: 0;
-            right: 0;
+            left: 90%;
+    top: 6vh;
             width: 200px;
             border-radius: 50%;
             transition: 2s;
