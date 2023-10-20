@@ -100,6 +100,7 @@ function goDrag(ele) {
       // 4. z-index값을 모두 초기화후 드래그 대상만 높여줌!
       dtg.forEach(ele=>ele.style.zIndex=0);
       ele.style.zIndex = 1;
+      
 
 
       // 값확인
