@@ -12,6 +12,7 @@ import tData from './data/com_module.js';
 
 // 대상선정: .common-area
 const comArea = dFn.qsa('.common-area');
+// const CTA = dFn.qs('.cat-top-area')
 
 // console.log(tData,comArea);
 
@@ -19,6 +20,7 @@ const comArea = dFn.qsa('.common-area');
 comArea[0].innerHTML = tData.topArea;
 // 하단영역 html 넣기
 comArea[1].innerHTML = tData.footerArea;
+// CTA.innerHTML = tData.CatTopArea
 
 
 // [3] 스크롤 액션 적용 대상에 클래스 넣기

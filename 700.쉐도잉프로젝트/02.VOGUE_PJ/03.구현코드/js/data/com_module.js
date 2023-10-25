@@ -1,4 +1,7 @@
 // 상단, 하단 공통 모듈 html코드
+import cdata from'./catedata.json'assert{type:'json'}
+console.log(cdata)
+
 export default {
     topArea:`
     <!-- 1-1.상단메뉴 -->
@@ -116,4 +119,18 @@ export default {
     </ul>
 
     `,
+    // CatTopArea:`
+    // <!-- 2-1-1.서브 타이틀 -->
+    //               <h2 class="cat-tit">${c.제목}</h2>
+    //               <!-- 서브 메뉴 LNB -->
+    //               <nav class="lnb">
+    //                 <ul>
+    //                   <li><a href="#">${v.메뉴}</a></li>
+    //                   <li><a href="#">트렌드</a></li>
+    //                   <li><a href="#">아이템</a></li>
+    //                   <li><a href="#">피플</a></li>
+    //                   <li><a href="#">화보</a></li>
+    //                 </ul>
+    //               </nav>
+    // `
 }

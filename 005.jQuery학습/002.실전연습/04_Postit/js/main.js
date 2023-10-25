@@ -47,7 +47,7 @@ $(() => {
             // 드롭된 요소는 ele.draggable
             let target = ele.draggable;
 
-            // console.log('나,빠졌다~!',target);
+            console.log('나,빠졌다~!',target);
 
             // 1. 드롭된요소의 이미지 src를 읽어오기
             let isrc = target.find("img").attr("src");
