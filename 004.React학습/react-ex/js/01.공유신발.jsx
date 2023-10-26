@@ -224,7 +224,7 @@ function GoodsCode(props) { // idx - 데이터 배열순번
 function SubViewCode(props){
   // props.idx = 선택데이터 순번 (신발/드레스)
   // props.chgFn()함수로 사용가능 부모: chgSubView 호출
-  // 프롭스다운 프롭스펑션 업다
+  // 프롭스다운 프롭스펑션 업/다운
   // props.itemNum
   const selData = twoData[props.idx]
   // 선택 전체데이터
