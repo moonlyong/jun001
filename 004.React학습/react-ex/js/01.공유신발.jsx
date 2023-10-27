@@ -1,14 +1,8 @@
-// 01.공유신발 JSX
-// import data from "./data.js";
-import myData from "./data.js";
-import myData2 from "./data2.js";
 // JS 기능함수 :순수 자바스크립트 함수호출
+
 import { initFn,firstOneFn } from "./act_effect.js";
-
-// 두개의 데이터를 배열로 구성
-const twoData = [myData, myData2];
-
-// console.log('데이터:',twoData);
+import { GoodsCode } from "./01.sub_com/goods_code.jsx";
+import { SubViewCode } from "./01.sub_com/sub_view_code.jsx";
 
 // 메인 컴포넌트 /////////////////
 // 메인의 의미는? 다른 구성요소 컴포넌트들을 모아
@@ -62,11 +56,6 @@ function MainComponent() {
     // -> 매번 업데이트 시에도 실행함
     React.useEffect(()=>{
       console.log('useEffect 순수');
-      // console.log('useEffect순수 구역 JS:',
-      //   document.querySelector('.img-box'));
-      // console.log('useEffect순수 구역 제이쿼리:',
-      //   $('.img-box'));
-      
     });
 
     // 빈 배열옵션 useEffect ///////
@@ -188,69 +177,6 @@ function MainComponent() {
     </React.Fragment>
   );
 } /////////// MainComponent //////////////////
-
-// console.log(myData);
-
-// 서브 컴포넌트(자식컴포넌트-> 부모컴포넌트로 부터 데이터를
-// props 속성을 통하여 전달받는다!)
-/************************************************* 
- * 서브 컴포넌트 1 : GoodsCode
- // 상품 html코드 구성 컴포넌트 ///////////
-*************************************************/
-function GoodsCode(props) { // idx - 데이터 배열순번
-  // 선택데이터
-  const selData = twoData[props.idx];
-  return selData.map((v) => (
-    <a href="#" onClick={()=>props.chgFn(1,v.idx)}>
-    <ol class="glist">
-      <li>
-        <img src={
-          props.idx?
-          "./images/gallery/"+v.idx+".jpg":
-          "./images/vans/vans_"+v.idx+".jpg"
-        } alt={props.idx?"드레스":"신발"} />
-      </li>
-      <li>{v.gname}</li>
-      <li>가격 : {v.gprice}원</li>
-    </ol>
-    </a>
-  ));
- 
-} /////////// GoodsCode //////////////////
-/************************************************* 
- * 서브 컴포넌트 2 : SubViewCode
- // 상품상세보기 html코드 구성 컴포넌트 ///////////
-*************************************************/
-function SubViewCode(props){
-  // props.idx = 선택데이터 순번 (신발/드레스)
-  // props.chgFn()함수로 사용가능 부모: chgSubView 호출
-  // 프롭스다운 프롭스펑션 업/다운
-  // props.itemNum
-  const selData = twoData[props.idx]
-  // 선택 전체데이터
-  // 배열.find(v=>{if(조건)return true})
-  const selItem = selData.find(v=>{
-    if(v.idx == props.itemNum) return true
-  })
-  
-
-  // 코드 리턴 파트
-  return(
-    <ol>
-      <li>
-        <img src={
-          props.idx?
-          "./images/gallery/"+selItem.idx+".jpg":
-          "./images/vans/vans_"+selItem.idx+".jpg"
-        } alt={props.idx?"드레스":"신발"} />
-      </li>
-      <li>상품명 : {selItem.gname} <br />
-      가격 : {selItem.gprice}원 <br />
-      <button onClick={()=>props.chgFn(0,0)}>리스트로 가기</button>
-      </li>
-    </ol>
-  );
-}
 
 // 메인컴포넌트 출력하기 //////////
 ReactDOM.render(<MainComponent />, 
