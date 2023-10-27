@@ -3,6 +3,9 @@
 import { initFn,firstOneFn } from "./act_effect.js";
 import { GoodsCode } from "./01.sub_com/goods_code.jsx";
 import { SubViewCode } from "./01.sub_com/sub_view_code.jsx";
+import myData from "./catedata.js"
+
+console.log(myData);
 
 // 메인 컴포넌트 /////////////////
 // 메인의 의미는? 다른 구성요소 컴포넌트들을 모아
