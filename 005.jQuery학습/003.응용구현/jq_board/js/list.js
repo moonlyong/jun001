@@ -15,19 +15,47 @@ Number(a.idx)==Number(b.idx)?
 // 데이터를 화면 리스트 코드로 변환하여 적용한다!
 // 대상: #board tbody
 const board = $('#board tbody');
+// 리스트 번호 변수
+
+
+// 페이징 되는 리스트 만들기
+// 페이징의 기본원리
+const pgBlock = 9
+let pgNum = 1
+const totalCnt = bData.length
+let paginBlock = Math.floor(totalCnt/pgBlock)
+let addOver = totalCnt % pgBlock
+console.log(totalCnt,pgBlock)
+let hcode = ''
+
+for(let i=(pgNum-1)*pgBlock;i<pgBlock*pgNum;i++){
+    // 만약 한계수가 전체 개수보다 크면 break (for문 나가기)
+    if(i >=totalCnt)break
+
+    hcode +=
+        `<tr>
+            <td>${i+1}</td>
+            <td>${bData[i].tit}</td>
+            <td>${bData[i].writer}</td>
+            <td>${bData[i].date}</td>
+            <td>${bData[i].cnt}</td>
+        </tr>
+        `
+}
+board.html(hcode)
 
 // 데이터 태그 생성후 태그넣기
-board.html(
-    bData.map(v=>`
-        <tr>
-            <td>${v.idx}</td>
-            <td>${v.tit}</td>
-            <td>${v.writer}</td>
-            <td>${v.date}</td>
-            <td>${v.cnt}</td>
-        </tr>
-    `).join('')
-); ///////// html //////////
+// board.html(
+//     bData.map(v=>`
+//         <tr>
+//             <td>${addNum()}</td>
+//             <td>${v.tit}</td>
+//             <td>${v.writer}</td>
+//             <td>${v.date}</td>
+//             <td>${v.cnt}</td>
+//         </tr>
+//     `).join('')
+// ); ///////// html //////////
 
 // 데이터를 태그로 구성함
 // 태그 구조: <tr><td></td>...</tr>
