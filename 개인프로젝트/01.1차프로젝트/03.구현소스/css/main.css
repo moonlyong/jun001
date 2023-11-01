@@ -20,12 +20,32 @@
     font-style: normal;
 }
 @font-face {
-  font-family: 'NeoDunggeunmoPro-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+    font-family: "NeoDunggeunmoPro-Regular";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/NeoDunggeunmoPro-Regular.woff2")
+        format("woff2");
+    font-weight: normal;
+    font-style: normal;
 }
-
+@font-face {
+    font-family: "DNFBitBitv2";
+    font-style: normal;
+    font-weight: 400;
+    src: url("//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf")
+        format("opentype");
+}
+@font-face {
+    font-family: "DOSPilgiMedium";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2")
+        format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 .fz28 {
     text-align: center;
     font-size: 40px;
@@ -40,13 +60,16 @@
     font-family: "KBO-Dia-Gothic_bold";
 }
 .font4 {
-  font-family: 'NeoDunggeunmoPro-Regular';
+    font-family: "NeoDunggeunmoPro-Regular";
 }
 .font5 {
+    font-family: "DNFBitBitv2";
 }
 .font6 {
+    font-family: "DOSPilgiMedium";
 }
 .font7 {
+    font-family: 'PyeongChangPeace-Bold';
 }
 .font8 {
 }
