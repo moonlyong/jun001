@@ -2,11 +2,11 @@
 
 import { Banner } from "./Banner";
 
-export function Comic(){
+export function Movies(){
     return(
         <>
-            <h1 style={{textAlign:'center'}}>코믹스 페이지</h1>
-            <Banner category="COMICS" />
+            <h1 style={{textAlign:'center'}}>무비스 페이지</h1>
+            <Banner category="MOVIES" />
         </>
     )
 
