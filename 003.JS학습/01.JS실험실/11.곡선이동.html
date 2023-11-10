@@ -23,8 +23,8 @@
         width: 40vw;
         aspect-ratio: 1;
         /* height: 40vw; */
-        border: 7px solid pink;
-        border-radius: 50%;
+        /* border: 7px solid pink; */
+        /* border-radius: 20%; */
         transition: .4s ease-in-out;
       }
       /* 회전하는 작은원 */
@@ -107,20 +107,20 @@
 
         /// 부모박스 사이즈 동적변경 적용하기
         // 사이즈 배열
-        const bxSize = [10,40,20,60,30,80];
-        // 부모박스
-        const pBox = document.querySelector('.bx');
+        // const bxSize = [10,40,20,60,30,80];
+        // // 부모박스
+        // const pBox = document.querySelector('.bx');
 
-        // 인터발함수로 부모박스 크기 변경하기
-        let num = 0;
-        setInterval(() => {
-            // 1.사이즈 변경
-            pBox.style.width = bxSize[num]+'vw';
-            // 2.배열순번번호 증가
-            num++;
-            // 3.배열마지막번호 초과시 처음으로!
-            if(num>bxSize.length-1) num=0;
-        }, 200); ///// 인터발함수 /////
+        // // 인터발함수로 부모박스 크기 변경하기
+        // let num = 0;
+        // setInterval(() => {
+        //     // 1.사이즈 변경
+        //     pBox.style.width = bxSize[num]+'vw';
+        //     // 2.배열순번번호 증가
+        //     num++;
+        //     // 3.배열마지막번호 초과시 처음으로!
+        //     if(num>bxSize.length-1) num=0;
+        // }, 200); ///// 인터발함수 /////
 
 
 
