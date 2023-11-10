@@ -8,6 +8,7 @@ import { Movie } from "../contents/Movie";
 import { Game } from "../contents/Game";
 import { News } from "../contents/News";
 import { Main } from "../contents/Main";
+import { SwiperApp } from "../plugin/SwiperApp";
 
 export function MainArea(props) {
 
@@ -21,6 +22,8 @@ export function MainArea(props) {
             {props.cat == "MOVIES" && <Movie cat={props.cat} />}
             {props.cat == "GAMES" && <Game cat={props.cat} />}
             {props.cat == "NEWS" && <News cat={props.cat} />}
+            {props.cat == "SWIPER" && 
+      <SwiperApp />}
         </main>
     );
 } ///////// MainArea 컴포넌트 ////////////
