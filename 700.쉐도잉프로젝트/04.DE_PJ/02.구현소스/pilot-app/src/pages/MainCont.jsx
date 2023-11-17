@@ -5,97 +5,48 @@ import { Banner } from "../modules/Banner";
 
 // 자동스크롤 JS 불러오기
 import { autoScroll } from "../func/jquery-autoScroll";
+// 드래그배너 JS 불러오기
+import { dragBanner } from "../func/drag_banner";
+import { FashionIntro } from "../modules/FashionIntro";
 
+export function MainCont() {
+  // 메인 페이지일때만 자동스크롤 기능 적용함!
+  useEffect(() => {
+    // 랜더링 후 한번만 적용!
+    // console.log("랜더링OK!");
+    
+    //자동스크롤 호출
+    autoScroll();
 
-import $ from 'jquery';
-window.jQuery = $;
-require('jquery-ui-dist/jquery-ui');
-require('jquery-ui-touch-punch/jquery.ui.touch-punch');
+    //드래그배너 호출
+    dragBanner();
+    
+  }, []); /////// useEffect ///////////
 
+  return (
+    <>
+      {/* 1. 배너 페이지 */}
+      <section id="ban" className="page" style={{ background: "lightblue" }}>
+        <Banner />
+      </section>
 
-export function MainCont(){
+      {/* 2. 남성패션 페이지 */}
+      <section className="page">
+        <FashionIntro cat="men" />
+      </section>
 
-    // 메인 페이지일때만 자동스크롤 기능 적용함!
-    useEffect(()=>{ // 랜더링 후 한번만 적용!
-        console.log('랜더링OK!');
-        //자동스크롤 호출
-        // autoScroll();
+      {/* 3. 여성패션 페이지 */}
+      <section className="page">
+        <FashionIntro cat="women" />
+      </section>
+      
+      {/* 4. 스타일패션 페이지 */}
+      <section className="page">
+        <FashionIntro cat="style" />
+      </section>
 
-        // 드래그 기능넣기
-        // 대상: .slide
-        const slide = $('.slide');
-
-        // 드래그 기능넣기
-        slide.draggable({axis:'x'});
-
-        // 드래그가 끝났을때 슬라이드 위치
-        slide.on('dragstop',()=>{
-            // 광드래그 막기 커버
-            // 비교를 위한 윈도우 가로값
-            let winW = $(window).width();
-            // 현재 슬라이드 left값
-            let pos = slide.offset().left;
-            // 이동차이수 = 슬라이드위치값(양수) - 윈도우가로값
-            let diff = Math.abs(pos) - winW;
-            // 결과해석: 양수->왼쪽으로 이동/음수->오른쪽으로 이동
-            let gap = winW/10
-
-            let cover = $('.cover')
-            console.log('드래그 멈춤!',pos,winW,diff);
-            
-            cover.show();
-            // 왼쪽으로 이동하기
-            if(diff>gap){
-                slide.animate({left:'-200%'},800,"easeOutQuint",()=>{
-                    slide.append(slide.find('li').first()).css({left:"-100%"})
-                cover.hide()
-                })
-            }
-
-            else if(diff<-gap){
-                slide.animate({left:'0'},800,"easeOutQuint",()=>{
-                    slide.prepend(slide.find('li').last()).css({left:"-100%"})
-                cover.hide()
-                })
-            }
-            else{
-                slide.animate({left:'-100%'},300,"easeOutQuint")
-            cover.hide()
-            }
-
-
-        }); /////////// dragstop /////////
-
-
-
-
-
-    },[]); /////// useEffect ///////////
-
-    return(
-        <>
-            {/* 1. 배너페이지 */}
-            <section id="ban" className="page" 
-            style={{background:'lightblue'}}>
-                <Banner />
-            </section>
-            <section className="page" 
-            style={{background:'lightcoral'}}>
-                
-            </section>
-            <section className="page" 
-            style={{background:'lightgreen'}}>
-                
-            </section>
-            <section className="page" 
-            style={{background:'lightseagreen'}}>
-                
-            </section>
-            <section className="page" 
-            style={{background:'lightpink'}}>
-                
-            </section>
-        </>
-    )
-
+      {/* 5. 하단 공통영역 */}
+      <section className="page" style={{ background: "lightpink" }}></section>
+    </>
+  );
 } //////// MainCont 컴포넌트 ///////
