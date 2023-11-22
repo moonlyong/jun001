@@ -26,10 +26,11 @@ import "./css/swiper_vid.css";
 // (여기서는 페이지네이션,네비게이션,자동넘김)
 import { Navigation } from "swiper/modules";
 
-export function SwiperVid() {
+export function SwiperVid(props) {
+  // props.cat - 카테고리명 -> 데이터선택 객체속성명
 
-  // 선택 데이터 : 여기서는 그대로 가져옴!
-  const selData = swVidData;  
+  // 선택 데이터 : 카테고리에 해당하는 데이터를 가져옴!
+  const selData = swVidData[props.cat];  
 
   // 비디오 보이기 함수 ////
   const showVid = (src, tit) => {
@@ -42,15 +43,23 @@ export function SwiperVid() {
     const vbx = $('.vid-bx');
     // 1-3. 타이틀 박스 : .ifr-tit
     const itit = $('.ifr-tit');
+    // 1-4. 닫기 버튼 : .cbtn
+    const cbtn = $('.cbtn');
 
     // 2. 변경하기
     // 2-1. 아이프레임 src경로 넣기
-    ifr.attr('src',src);
+    ifr.attr('src',src+"?autoplay=1");
     // 2-2. 비디오 타이틀 넣기
     itit.text(tit);
     // 2-3. 전체박스 나타나기
     vbx.fadeIn(300);
-    // cv
+    // 2-4. 닫기버튼 셋팅
+    cbtn.click(()=>{
+      // 전체박스 사라지기
+      vbx.fadeOut(300);
+      // 기존 동영상 플레이 멈추기(src삭제)
+      ifr.attr('src','');
+    }); //// click ////////
 
   }; ////////// showVid 함수 ////////////////
 
@@ -58,11 +67,26 @@ export function SwiperVid() {
   return (
     <>
       <Swiper
-        slidesPerView={4}
+        // slidesPerView={4}
         spaceBetween={20}
         navigation={true}
         /* 사용할 모듈을 여기에 적용시킨다 */
         modules={[Navigation]}
+        // 스와이퍼 사이즈별 슬라이드수 변경!
+        breakpoints={{
+          200: {
+              slidesPerView: 1,
+          },
+          500: {
+              slidesPerView: 2,
+          },
+          1000: {
+              slidesPerView: 3,
+          },
+          1200: {
+              slidesPerView: 4,
+          },
+        }}
         className="mySwiper"
       >
         {
