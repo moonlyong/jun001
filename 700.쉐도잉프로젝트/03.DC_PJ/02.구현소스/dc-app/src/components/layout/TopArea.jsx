@@ -3,6 +3,9 @@
 import { Link } from "react-router-dom";
 import { Logo } from "../modules/Logo";
 import { menu } from "../data/gnb";
+// 제이쿼리
+import $ from "jquery";
+import "jquery-ui-dist/jquery-ui";
 
 // 폰트어썸 불러오기
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -19,6 +22,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
   -> 여기서는 MainArea 컴포넌트에 출력!
 *******************************************************/
 export function TopArea() {
+
+  // 검색창 보이기 함수
+  const showSearch = () =>{
+    // 검색창 보이기
+    $('.searchingGnb').show();
+    $('#schinGnb').focus()
+  }
+  // 엔터치면 검색함수 호출
+  const enterKey = e =>{
+    console.log(e.key)
+    if(e.key == 'Enter') goSearch()
+  }
+  // 검색페이지 이동
+  const goSearch = () => {
+    console.log('zz')
+    
+  }
+
+
+
   return (
     <>
       {/* 1.상단영역 */}
@@ -58,8 +81,17 @@ export function TopArea() {
             ))}
             {/* 3. 검색,회원가입,로그인 링크 */}
             <li style={{marginLeft:'auto'}}>
+              <div className="searchingGnb">
+              {/* 검색버튼 돋보기 아이콘 */}
+              <FontAwesomeIcon icon={faSearch}
+              className="schbtnGnb"
+              title="Open Search"
+              />
+              <input id="schinGnb" type="text" placeholder="search" onKeyUp={enterKey} />
+
+              </div>
               {/* 검색기능링크 - 클릭시 검색창보이기 */}
-              <a href="#">
+              <a href="#" onClick={showSearch}>
               <FontAwesomeIcon icon={faSearch} />
               </a>
             </li>
