@@ -5,10 +5,15 @@ import { Searching } from "../modules/Searching";
 
 export function SchPage(){
 
-    const loc = useLocation()
-    const keyword = loc.state.keyword;
-    console.log(keyword)
+    // 라우터 전달값 받기
+    const loc = useLocation();
 
+    // 넘어온 키워드 받기 //////
+    let keyword;
+    // 전달값이 있을 경우 키워드를 읽어게함!
+    if(loc.state) keyword = loc.state.keyword;
+    console.log('검색어:',keyword);
+    
     return(
         <>
             <h1 className="tit">Search Result</h1>
