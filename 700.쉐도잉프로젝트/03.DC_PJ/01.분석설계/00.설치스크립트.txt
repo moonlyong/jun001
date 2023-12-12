@@ -9,6 +9,10 @@
 - 스크립트: 
     (1) npm i react-router-dom@latest
     (2) npm i jquery
+    (1) npm i jquery
+    (2) npm i jquery-ui-dist
+    (3) npm i jquery-ui-touch-punch
+    (4) npm i swiper
 
 3. 설치확인
 - 파일명: package.json
