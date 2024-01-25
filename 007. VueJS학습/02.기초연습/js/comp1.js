@@ -43,9 +43,6 @@ Vue.component("list-comp", {
         </aside>
     </div>
     `,
-
-  
-
   // 2-2. data 옵션 : 컴포넌트 내부 변수셋팅
   // 실행원리: 컴포넌트가 빌드할때
   // data속성의 함수를 호출한다!
