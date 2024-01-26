@@ -170,15 +170,18 @@ new Vue({
     // 원래가격변수 : 각 리스트 아이템 클릭순간 셋팅
     let orgPrice;
 
-    // 현재 리스트 순번
+    // 현재리스트 순번 : 양쪽 이동버튼에서 사용
     let cIdx;
 
 
     // 1. 갤러리 리스트 클릭시 큰 이미지박스 보이기
     $(".grid>div").on('click',function(){
       // console.log('대상:',this);
-      cIdx=$(this).index()
-      console.log(cIdx)
+
+      // 현재리스트 순번 셋팅하기
+      cIdx = $(this).index();
+      console.log('클릭된리스트순번:',cIdx);
+
       // 클릭된 이미지 경로 읽어오기
       let isrc = $(this).find('img').attr('src');
       console.log('이미지경로:',isrc);
@@ -211,34 +214,41 @@ new Vue({
       // 상품상세정보창 보이기
       $('#bgbx').show();
 
+      // 개수 초기화
+      sum.val('1');
 
     }); ////////// click ///////////
-    
-    const sum = $("#sum")
-    sum.val('1')
 
-    const addCommas = (x) => {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
+    // 개수대상
+    const sum = $("#sum");
+
     // 증감버튼 셋팅 ////
     $('.chg_num img').click(function(){
         // 클릭된 증감 이미지 순번
         let idx = $(this).index();
         console.log('순번:',idx);
+        
 
         // 현재 개수
-        let num = Number($("#sum").val());
-        let setNum
+        let num = Number(sum.val());
+
+        // 반영될 변경수
+        let setNum;
+
         // 증감분기
         if(idx===0){ // 증가
-          setNum = ++num
+          setNum = ++num;          
+          if(setNum>50){ setNum=50;num=50;}
         }
-        else{//감소
-          setNum = --num
-          if(setNum<1){setNum=1;num=1;}
-        }
-        sum.val(setNum)
-        $('#total').html(addCommas(orgPrice*setNum)+"원");
+        else{
+          setNum = --num;
+          if(setNum<1){ setNum=1;num=1;}
+        } /// else ///
+
+        // 최종반영하기        
+        sum.val(setNum);
+        $('#total').html(
+          addCommas(orgPrice*setNum)+"원");
     })
 
     // 닫기버튼 셋팅
@@ -246,9 +256,16 @@ new Vue({
       e.preventDefault();
       $('#bgbx').hide()});
 
-      $('.abtn').click(function(e) {
-        e.preventDefault();
-        
+      // 세자리콤마 함수
+    const addCommas = (x) => {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // 이전/다음 버튼 셋팅하기
+    // 대상: .abtn
+    $('.abtn').click(function(e){
+      e.preventDefault();
+
       // 오른쪽 버튼이면 true
       let isR = $(this).is('.rb');
       
@@ -301,8 +318,10 @@ new Vue({
       // 개수 초기화
       sum.val('1');
 
-      })
+    }); /////////// click //////////////
+
 
 
   }, ///// mounted ///////////
 }); //////// win-comp 인스턴스 생성 ///////////
+
